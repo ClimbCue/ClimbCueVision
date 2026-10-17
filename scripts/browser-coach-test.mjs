@@ -1,3 +1,4 @@
+import {drawHold} from './helpers/hold-regions.mjs';
 import {chromium} from 'playwright';
 import assert from 'node:assert/strict';
 import {writeFile,readFile} from 'node:fs/promises';
@@ -10,7 +11,7 @@ try{
  await page.selectOption('#coach-mode','preview');await page.check('#fixed-camera');await page.selectOption('#sample',{index:1});
  await page.waitForFunction(()=>!document.querySelector('#coach-run').disabled&&document.querySelector('#hip').textContent!=='—');
  await page.click('#mark-holds');await page.locator('#canvas').scrollIntoViewIfNeeded();
- const rect=await page.locator('#canvas').boundingBox();await page.mouse.click(rect.x+rect.width*.3,rect.y+rect.height*.4);
+ await drawHold(page,.3,.4);
  await page.click('#coach-run');await page.waitForFunction(()=>!document.querySelector('#coach-export').disabled);
  const short=await page.locator('#coach-cue').textContent();const long=await page.locator('#coach-detail-instruction').textContent();assert.equal(short,long);assert.ok([...short].length<=20);
  assert.match(await page.locator('#coach-origin').textContent(),/未调用大模型/);

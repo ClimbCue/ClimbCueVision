@@ -1,3 +1,4 @@
+import {drawHold} from './helpers/hold-regions.mjs';
 import {chromium} from 'playwright';
 import {readFile,writeFile} from 'node:fs/promises';
 import assert from 'node:assert/strict';
@@ -15,7 +16,7 @@ try{
  let current=await snap('color-red-candidates');assert.equal(current.segmentation.model,'color-hsv');assert.equal(current.holds.length,0);assert.equal(await page.locator('#segment-candidates input:checked').count(),red.polygons.length);
  const center=polygonInfo(red.polygons[0]).center;await clickPoint(center);assert.equal(await page.locator('#segment-candidates input:checked').count(),red.polygons.length-1);await clickPoint(center);
  // Manual additions coexist with auto proposals; deleting and undoing keeps IDs stable.
- await page.click('#mark-holds');await clickPoint({x:.25,y:.1});current=await snap('color-manual-add');assert.equal(current.holds.length,1);assert.equal(current.holds[0].source,'manual');const manual=current.holds[0];await clickPoint(manual);assert.equal((await snap('color-manual-delete')).holds.length,0);await page.click('#undo-hold');assert.deepEqual((await snap('color-manual-undo')).holds,[manual]);
+ await page.click('#mark-holds');await drawHold(page,.25,.1);current=await snap('color-manual-add');assert.equal(current.holds.length,1);assert.equal(current.holds[0].source,'manual');const manual=current.holds[0];await clickPoint(manual);await page.click('#delete-hold');assert.equal((await snap('color-manual-delete')).holds.length,0);await page.click('#undo-hold');assert.deepEqual((await snap('color-manual-undo')).holds,[manual]);
  // Add another color; a rescan must not erase manual work.
  const multi=await scan(()=>page.getByRole('button',{name:'选择蓝色岩点',exact:true}).click());assert.ok(multi.polygons.length>red.polygons.length);assert.deepEqual((await snap('color-multiple')).holds,[manual]);
  // Mirrored eyedropper samples the original frame, not the drawn skeleton or highlights.

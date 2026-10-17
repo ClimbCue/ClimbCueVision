@@ -18,7 +18,8 @@
     "test:hold-selection": "node scripts/browser-hold-selection-test.mjs",
     "test:coach-vision": "node scripts/browser-coach-vision-test.mjs",
     "test:coach-snapshot": "node scripts/browser-coach-snapshot-test.mjs",
-    "test:hold-visibility": "node scripts/browser-hold-visibility-test.mjs"
+    "test:hold-visibility": "node scripts/browser-hold-visibility-test.mjs",
+    "test:hold-regions": "node scripts/browser-hold-regions-test.mjs"
   },
   "dependencies": {
     "@mediapipe/tasks-vision": "1.1.1"

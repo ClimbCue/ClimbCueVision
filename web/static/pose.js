@@ -1,6 +1,7 @@
 import { NAMES, EDGES, reliable, metrics, toCSV } from './pose-math.js';
 import {climbingMetrics,MotionTracker,holdProximity,LIMBS} from './climbing-math.js';
 import {contains,polygonInfo} from './segment-math.js';
+import {initHoldEditor} from './hold-editor.js?v=hold-region-20261017';
 import {initCoach} from './coach.js?v=hold-visible-20261017';
 const $=(id)=>document.getElementById(id);
 const video=$('video'),canvas=$('canvas'),ctx=canvas.getContext('2d');
@@ -9,6 +10,7 @@ let worker,readyPromise,stream,objectURL,session=0,frame=0,sequence=0,frames=[],
 let active=false,busy=false,lastTime=-1,lastCapture=0,raf=0,fpsTimes=[],source='',ready=false;
 const MAX_FRAMES=1800;
 const tracker=new MotionTracker(),backdrop=new OffscreenCanvas(1,1),backdropCtx=backdrop.getContext('2d');
+let holdEditor;
 let holds=[],marking=false,segmenting=false,segmentBusy=false,segmentVersion=0,segmentPolygons=[],segmentMeta=null;
 let segmentSelected=new Set();
 let collectingPoints=false,promptPoints=[],batchRunning=false,batchVersion=0;
@@ -23,7 +25,7 @@ function buttons(loading=false){for(const id of ['camera','choose-file','sample'
 function clearData(){
   clearSegments();freezeEditingFrame=false;
   frames=[];frame=0;last=null;fpsTimes=[];lastTime=-1;lastCapture=0;tracker.reset();holds=[];holdUndo=[];marking=false;backdrop.width=backdrop.height=1;
-  climbingIDs.forEach(id=>$(id).textContent='—');$('motion-state').textContent='等待连续观测';$('hold-count').textContent='0 个标记';$('hold-monitor').textContent='等待标记岩点';canvas.classList.remove('marking');$('mark-holds').textContent='手动补点 / 删点';$('clear-holds').disabled=true;
+  climbingIDs.forEach(id=>$(id).textContent='—');$('motion-state').textContent='等待连续观测';$('hold-count').textContent='0 个标记';$('hold-monitor').textContent='等待标记岩点';canvas.classList.remove('marking');$('mark-holds').textContent='手动区域修正';$('clear-holds').disabled=true;
   ['fps','visible','latency','leftElbow','rightElbow','leftKnee','rightKnee','hip','tilt'].forEach(id=>$(id).textContent='—');
   $('landmarks').replaceChildren();$('frame-count').textContent='尚无采样数据';$('json').disabled=$('csv').disabled=true;
   const chart=$('chart');chart.getContext('2d').clearRect(0,0,chart.width,chart.height);updateSegmentButtons();
@@ -139,7 +141,7 @@ $('upload').onchange=()=>{const f=$('upload').files[0];if(f)loadInput('file',f);
 $('sample').onchange=()=>{if($('sample').value)loadInput('sample',$('sample').value);};
 $('stop').onclick=()=>{stop();status('已停止，摄像头已释放。当前数据保留，可导出或选择新输入。');};
 async function resumeTracking(){
- try{clearSegments();marking=false;freezeEditingFrame=false;if(!$('fixed-camera').checked){holds=[];holdUndo=[];syncHolds();}paintFrame();await video.play();tracker.reset();fpsTimes=[];canvas.classList.remove('marking');$('mark-holds').textContent='手动补点 / 删点';$('hold-status').textContent=`已保留 ${holds.length} 个岩点，正在逐帧观察身体姿态与二维邻近；需要补点时可再次暂停标记。`;status(holds.length?`正在追踪姿态，保留 ${holds.length} 个岩点并实时更新二维邻近。`:'继续追踪。');updateSegmentButtons();canvas.scrollIntoView({block:'center'});}catch(e){status(e.message,true);}
+ try{clearSegments();marking=false;freezeEditingFrame=false;if(!$('fixed-camera').checked){holds=[];holdUndo=[];syncHolds();}paintFrame();await video.play();tracker.reset();fpsTimes=[];canvas.classList.remove('marking');$('mark-holds').textContent='手动区域修正';$('hold-status').textContent=`已保留 ${holds.length} 个岩点，正在逐帧观察身体姿态与二维邻近；需要补点时可再次暂停标记。`;status(holds.length?`正在追踪姿态，保留 ${holds.length} 个岩点并实时更新二维邻近。`:'继续追踪。');updateSegmentButtons();canvas.scrollIntoView({block:'center'});}catch(e){status(e.message,true);}
 }
 $('play').onclick=()=>{if(video.paused)return resumeTracking();video.pause();$('pose-state').textContent='已暂停';status('已暂停，保留最后一帧数据。');updateSegmentButtons();};
 $('seek').oninput=()=>{if(Number.isFinite(video.duration)){video.currentTime=Number($('seek').value)/100*video.duration;lastTime=-1;fpsTimes=[];tracker.reset();clearSegments();if(video.paused)status('进度已调整，点击播放后更新姿态。');}};
@@ -171,7 +173,7 @@ function paintFrame(){
  const bounds=canvas.getBoundingClientRect(),displayScale=Math.max(.05,Math.min(bounds.width/canvas.width,bounds.height/canvas.height)),px=n=>n/displayScale;
  ctx.save();if($('mirror').checked){ctx.translate(canvas.width,0);ctx.scale(-1,1);}
  ctx.drawImage(backdrop,0,0);
- function outline(polygon,selected,confirmed=false){ctx.beginPath();polygon.forEach(([x,y],i)=>i?ctx.lineTo(x*canvas.width,y*canvas.height):ctx.moveTo(x*canvas.width,y*canvas.height));ctx.closePath();ctx.fillStyle=confirmed?'rgba(135,235,133,.22)':selected?'rgba(80,190,255,.35)':'rgba(180,190,190,.06)';ctx.fill();ctx.strokeStyle=confirmed?'#adfa88':selected?'#56c5ff':'#829194';ctx.lineWidth=selected||confirmed?2:1;ctx.stroke();}
+ function outline(polygon,selected,confirmed=false){ctx.beginPath();polygon.forEach(([x,y],i)=>i?ctx.lineTo(x*canvas.width,y*canvas.height):ctx.moveTo(x*canvas.width,y*canvas.height));ctx.closePath();ctx.fillStyle=confirmed?'rgba(135,235,133,.22)':selected?'rgba(80,190,255,.35)':'rgba(180,190,190,.06)';ctx.fill();ctx.strokeStyle=confirmed?'#adfa88':selected?'#56c5ff':'#829194';ctx.lineWidth=px(selected||confirmed?2.5:1.5);ctx.stroke();}
  if(video.paused||$('fixed-camera').checked){segmentPolygons.forEach((p,i)=>outline(p,segmentSelected.has(i)));for(const h of holds)if(h.polygon)outline(h.polygon,false,true);} 
  for(const [i,p] of promptPoints.entries()){ctx.save();ctx.translate(p[0]*canvas.width,p[1]*canvas.height);ctx.strokeStyle='#ffe17d';ctx.fillStyle='#ffe17d';ctx.lineWidth=2;ctx.beginPath();ctx.arc(0,0,7,0,Math.PI*2);ctx.stroke();if($('mirror').checked)ctx.scale(-1,1);ctx.font='bold 15px sans-serif';ctx.fillText(`P${i+1}`,10,-8);ctx.restore();}
  ctx.lineWidth=Math.max(2,canvas.width/230);ctx.strokeStyle='#dafa83';ctx.shadowColor='#142c27';ctx.shadowBlur=4;
@@ -180,9 +182,10 @@ function paintFrame(){
  if(video.paused||$('fixed-camera').checked){
   ctx.strokeStyle='#ffbd7b';ctx.beginPath();for(const [i,p] of (last.motion.trail||[]).entries()){if(i)ctx.lineTo(p.x*canvas.width,p.y*canvas.height);else ctx.moveTo(p.x*canvas.width,p.y*canvas.height);}ctx.stroke();
   for(const [key,index] of LIMBS){const near=last.proximity?.[key],hold=holds.find(h=>h.id===near?.id),point=points[index];if(!hold||!reliable(point))continue;ctx.save();ctx.setLineDash([5,5]);ctx.strokeStyle='#7cddff';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(point.x*canvas.width,point.y*canvas.height);ctx.lineTo(hold.x*canvas.width,hold.y*canvas.height);ctx.stroke();ctx.restore();}
-  for(const hold of holds){const x=hold.x*canvas.width,y=hold.y*canvas.height;ctx.strokeStyle='#27dcff';ctx.lineWidth=px(2.5);ctx.beginPath();ctx.arc(x,y,px(6),0,2*Math.PI);ctx.stroke();ctx.save();ctx.translate(x+px(10),Math.max(px(20),y-px(8)));if($('mirror').checked)ctx.scale(-1,1);ctx.font=`bold ${px(14)}px sans-serif`;const label='#'+hold.id;ctx.fillStyle='#092d36';ctx.fillRect(-px(3),-px(15),ctx.measureText(label).width+px(6),px(20));ctx.fillStyle='#7cecff';ctx.fillText(label,0,0);ctx.restore();}
+  for(const hold of holds){const x=hold.x*canvas.width,y=hold.y*canvas.height;ctx.strokeStyle='#27dcff';ctx.lineWidth=px(2.5);if(!hold.polygon){ctx.beginPath();ctx.arc(x,y,px(6),0,2*Math.PI);ctx.stroke();}ctx.save();ctx.translate(x+px(10),Math.max(px(20),y-px(8)));if($('mirror').checked)ctx.scale(-1,1);ctx.font=`bold ${px(14)}px sans-serif`;const label='#'+hold.id;ctx.fillStyle='#092d36';ctx.fillRect(-px(3),-px(15),ctx.measureText(label).width+px(6),px(20));ctx.fillStyle='#7cecff';ctx.fillText(label,0,0);ctx.restore();}
  }
  for(const [p,color] of [[c.center,'#ffbd7b'],[last.metrics.hip,'#96f3c8']]){if(!p)continue;ctx.strokeStyle=color;ctx.lineWidth=3;ctx.beginPath();ctx.arc(p.x*canvas.width,p.y*canvas.height,9,0,2*Math.PI);ctx.stroke();}
+ holdEditor?.draw(ctx,px);
  ctx.restore();
 }
 function resetMotionDisplay(){
@@ -200,18 +203,34 @@ $('fixed-camera').onchange=()=>{
  if($('fixed-camera').checked&&selectedColors.size&&!segmentPolygons.length&&!segmentBusy)scheduleColorScan();
 };
 function pauseForMarking(){video.pause();freezeEditingFrame=!!last;$('pose-state').textContent='已暂停 · 可标记岩点';}
-function editPoint(p){
- const hit=holds.find(h=>h.polygon?contains(p,h.polygon):Math.hypot((p.x-h.x)*canvas.width,(p.y-h.y)*canvas.height)<Math.max(10,canvas.width/40));
- if(hit){rememberHolds();holds=holds.filter(h=>h!==hit);syncHolds();paintFrame();return;}
- const candidate=candidateAt(p);if(candidate){toggleCandidate(candidate.i);return;}
- if(holds.length>=100){$('hold-status').textContent='已到 100 个岩点上限，请删除一些标记后再添加。';return;}
- rememberHolds();holds.push({id:nextHoldId(),...p,visibility:1,source:'manual'});syncHolds();paintFrame();
- $('hold-status').textContent=`已标记 ${holds.length} 个岩点。继续点击添加；已有标记点一下删除，可撤销。`;
+function saveManualRegion(polygon,id=null,source='manual'){
+ const index=holds.findIndex(h=>h.id===id);
+ if(index<0&&holds.length>=100){$('hold-status').textContent='已到 100 个岩点上限，请先删除一些区域。';return null;}
+ rememberHolds();const info=polygonInfo(polygon),old=index>=0?holds[index]:null;
+ const hold={...(old||{}),id:old?.id??nextHoldId(),...info.center,visibility:1,source:old?'manual':source,
+  ...(old?{original_source:old.original_source||old.source}:{}),polygon:polygon.map(p=>[...p]),bbox:info.bbox,area_fraction:info.area_fraction};
+ if(index>=0)holds=holds.map((h,i)=>i===index?hold:h);else holds.push(hold);
+ syncHolds();paintFrame();return hold.id;
 }
+function enterManual(){clearTimeout(colorTimer);colorRevision++;colorPicking=false;segmenting=false;collectingPoints=false;promptPoints=[];marking=true;canvas.classList.add('marking');updateSegmentButtons();}
+function editPoint(p){
+ const hit=holds.filter(h=>h.polygon&&contains(p,h.polygon)).sort((a,b)=>a.area_fraction-b.area_fraction)[0];
+ if(hit){holdEditor.select(hit.id);return;}
+ const candidate=candidateAt(p);if(candidate){toggleCandidate(candidate.i);return;}
+ if($('hold-edit-mode').value==='draw'){$('hold-status').textContent='请按住鼠标或手指，沿岩点边缘画一圈。';return;}
+ if(holds.length>=100){$('hold-status').textContent='已到 100 个岩点上限，请先删除一些区域。';return;}
+ if(!$('segment-model').value){$('hold-status').textContent='分割模型未就绪，请选择“手动画轮廓”圈出区域；不会只保存一个点。';return;}
+ return runSegment([p.x,p.y],true,true);
+}
+holdEditor=initHoldEditor({canvas,getHolds:()=>holds,
+ enabled:()=>!!last&&backdrop.width>1&&!segmentBusy&&!batchRunning&&!colorPicking&&!segmenting&&!collectingPoints,
+ toPoint:canvasPoint,pause:pauseForMarking,enter:enterManual,commit:saveManualRegion,
+ remove:id=>{rememberHolds();holds=holds.filter(h=>h.id!==id);syncHolds();$('hold-status').textContent='已删除所选岩点，可撤销恢复完整区域。';},
+ repaint:paintFrame,status:text=>$('hold-status').textContent=text});
 $('mark-holds').onclick=()=>{
  if(!last)return;
- clearTimeout(colorTimer);colorRevision++;pauseForMarking();colorPicking=false;segmenting=false;collectingPoints=false;promptPoints=[];marking=!marking;updateSegmentButtons();canvas.classList.toggle('marking',marking);$('mark-holds').textContent=marking?'完成手动修正':'手动补点 / 删点';$('pose-state').textContent='已暂停';if(marking)canvas.scrollIntoView({block:'center'});
- $('hold-status').textContent=marking?'空白处点击补点；点击已确认岩点删除；点击候选取消或恢复。可撤销上一步。':'修正已保存，可以确认候选并播放监测。';
+ clearTimeout(colorTimer);colorRevision++;pauseForMarking();colorPicking=false;segmenting=false;collectingPoints=false;promptPoints=[];marking=!marking;updateSegmentButtons();canvas.classList.toggle('marking',marking);$('mark-holds').textContent=marking?'完成手动修正':'手动区域修正';$('pose-state').textContent='已暂停';if(marking)canvas.scrollIntoView({block:'center'});
+ $('hold-status').textContent=marking?'点击岩点识别区域；已有区域选中后可拖动、缩放、重画或删除，也可手动画轮廓。':'修正已保存，可以确认候选并播放监测。';
 };
 canvas.onclick=event=>{
  if(!last){$('hold-status').textContent='请先选择视频或摄像头，等待画面出现后再点击岩点。';return;}
@@ -239,14 +258,14 @@ canvas.onclick=event=>{
   marking=true;clearTimeout(colorTimer);colorRevision++;updateSegmentButtons();canvas.classList.add('marking');editPoint(p);
  }
 };
-function canvasPoint(event){const r=canvas.getBoundingClientRect();let x=(event.clientX-r.left)/r.width;if($('mirror').checked)x=1-x;return {x,y:(event.clientY-r.top)/r.height};}
+function canvasPoint(event){const r=canvas.getBoundingClientRect();let x=(event.clientX-r.left)/r.width;if($('mirror').checked)x=1-x;return {x:Math.max(0,Math.min(1,x)),y:Math.max(0,Math.min(1,(event.clientY-r.top)/r.height))};}
 function candidateAt(p){return segmentPolygons.map((poly,i)=>({i,poly,area:polygonInfo(poly).area_fraction})).filter(v=>contains(p,v.poly)).sort((a,b)=>a.area-b.area)[0];}
 function toggleCandidate(i){segmentSelected.has(i)?segmentSelected.delete(i):segmentSelected.add(i);showCandidates();paintFrame();}
 function nextHoldId(){for(let id=1;id<=100;id++)if(!holds.some(h=>h.id===id))return id;}
-function rememberHolds(){holdUndo.push(holds.map(h=>({...h})));if(holdUndo.length>100)holdUndo.shift();}
+function rememberHolds(){holdUndo.push(structuredClone(holds));if(holdUndo.length>100)holdUndo.shift();}
 $('undo-hold').onclick=()=>{if(holdUndo.length)holds=holdUndo.pop();syncHolds();paintFrame();};
 $('clear-holds').onclick=()=>{rememberHolds();holds=[];syncHolds();paintFrame();};
-$('mirror').onchange=paintFrame;
+$('mirror').onchange=()=>{holdEditor.cancel();paintFrame();};
 
 function sameRegion(a,b){
  const x=polygonInfo(a),y=polygonInfo(b),u=x.bbox,v=y.bbox;
@@ -258,7 +277,7 @@ function updateSegmentButtons(){
  const editable=!!last&&backdrop.width>1&&!segmentBusy&&!batchRunning;
  const usable=editable&&!!$('segment-model').value;
  $('color-pick').disabled=!editable;$('color-scan').disabled=!editable||!selectedColors.size;
- $('color-pick').setAttribute('aria-pressed',String(colorPicking));$('mark-holds').setAttribute('aria-pressed',String(marking));$('mark-holds').textContent=marking?'完成手动修正':'手动补点 / 删点';
+ $('color-pick').setAttribute('aria-pressed',String(colorPicking));$('mark-holds').setAttribute('aria-pressed',String(marking));$('mark-holds').textContent=marking?'完成手动修正':'手动区域修正';
 
  $('segment-multi').disabled=!usable;$('segment-run').disabled=!usable||!promptPoints.length;
  $('segment-run').textContent=`分割所选 ${promptPoints.length} 点`;$('segment-undo').disabled=!usable||!promptPoints.length;
@@ -268,13 +287,15 @@ function updateSegmentButtons(){
  $('holds-play').textContent=segmentSelected.size?`确认 ${segmentSelected.size} 个候选并播放监测`:'完成标记并播放监测';
  $('undo-hold').disabled=!holdUndo.length||batchRunning||segmentBusy;
  $('mark-holds').disabled=!editable;
- $('hold-interaction').textContent=!last?'先加载视频，画面出现后即可标记':segmentBusy||batchRunning?'正在处理候选，请稍候':colorPicking?'取色模式：点击岩点的颜色区域':collectingPoints?'SAM 批量模式：点击多个目标位置':segmenting?'SAM 模式：点击要分割的目标':!active?'当前为停止画面：仍可点击标记并导出':!$('fixed-camera').checked?'可直接点击画面暂停并标记；保留标记播放时再勾选固定机位':'点击画面即可暂停、选岩点；蓝色候选点一下取消或恢复';
+ $('hold-interaction').textContent=!last?'先加载视频，画面出现后即可标记':segmentBusy||batchRunning?'正在处理候选，请稍候':colorPicking?'取色模式：点击岩点的颜色区域':collectingPoints?'SAM 批量模式：点击多个目标位置':segmenting?'SAM 模式：点击要分割的目标':$('hold-edit-mode').value==='draw'?'按住鼠标或手指沿岩点边缘画一圈，松开保存区域':!active?'停止画面仍可圈选、调整区域并导出':!$('fixed-camera').checked?'点击识别区域，已有轮廓可拖动调整；保留标记播放需确认固定机位':'点击识别区域；已有轮廓点击选中，蓝色候选点击取消或恢复';
 
  $('segment-click').disabled=!usable;$('segment-all').disabled=!usable||$('segment-model').value!=='fastsam-s';
  $('segment-accept').disabled=!editable||!video.paused||!segmentSelected.size;
  $('segment-export').disabled=!segmentMeta&&!holds.some(h=>h.polygon);
+ holdEditor?.sync();
 }
 function clearSegments(){
+ holdEditor?.reset();
  clearTimeout(colorTimer);colorRevision++;colorPicking=false;
  $('color-status').textContent='选色可重新生成候选；播放期间不运行颜色识别。';
  batchVersion++;batchRunning=false;collectingPoints=false;promptPoints=[];
@@ -304,12 +325,13 @@ $('segment-run').onclick=async()=>{
 };
 $('segment-all').onclick=()=>{collectingPoints=false;promptPoints=[];return runSegment(null);};
 $('segment-clear').onclick=()=>{clearSegments();paintFrame();};
-async function runSegment(point,append=!!point){
+async function runSegment(point,append=!!point,manual=false){
  if(!last||segmentBusy)return;
  pauseForMarking();segmenting=false;marking=false;canvas.classList.remove('marking');
  segmentBusy=true;const token=session,version=++segmentVersion,model=$('segment-model').value;
  if(!append){segmentPolygons=[];segmentMeta=null;candidateInfo.clear();segmentSelected.clear();$('segment-candidates').replaceChildren();last.segmentation=null;}updateSegmentButtons();
  if(!batchRunning)$('segment-status').textContent='正在本机分割，首次加载可能较慢…';
+ if(manual)$('hold-status').textContent='正在识别所点岩点的完整区域，首次加载可能较慢…';
  try{
   // Wait for the single outstanding pose request before occupying the shared inference engine.
   while(busy&&token===session)await new Promise(r=>setTimeout(r,50));
@@ -320,13 +342,22 @@ async function runSegment(point,append=!!point){
   const result=await response.json();if(!response.ok)throw new Error(result.detail||'分割失败');
   if(token!==session||version!==segmentVersion||!video.paused)return;
   const incoming=result.polygons.filter(p=>p.length>=3&&polygonInfo(p).area_fraction>1e-8);
+  if(manual){
+   const manualStatus=text=>{$('hold-status').textContent=text;$('segment-status').textContent=text;};
+   const polygon=incoming.filter(p=>contains({x:point[0],y:point[1]},p)).sort((a,b)=>polygonInfo(a).area_fraction-polygonInfo(b).area_fraction)[0];
+   if(!polygon){manualStatus('此处未识别到区域，请换个位置或选择“手动画轮廓”；未添加点标记。');return false;}
+   if(polygonInfo(polygon).area_fraction>.15){manualStatus('识别区域过大，请选择“手动画轮廓”圈出岩点，或换个位置重试。');return false;}
+   const id=saveManualRegion(polygon,null,`manual-${model}`);if(id===null)return false;holdEditor.select(id);marking=true;
+   manualStatus(`已圈出岩点 #${id}，请检查边界；可拖动区域、缩放四角，或重画所选区域。`);
+   return true;
+  }
   ingestCandidates({...result,point,polygons:incoming});
   $('segment-status').textContent=`${segmentPolygons.length} 个候选 · ${pretty(result.inference_ms)} ms · ${result.runtime}。`+(segmentPolygons.length?'请勾选并检查边界，确认后才能加入岩点标记。':'未找到目标；可换一个点击位置或切换模型。');
   // Point prompts select only the smallest returned region containing that point.
   if(point){const hit=segmentPolygons.map((p,i)=>({i,p,area:polygonInfo(p).area_fraction})).filter(v=>contains({x:point[0],y:point[1]},v.p)).sort((a,b)=>a.area-b.area)[0];if(hit)segmentSelected.add(hit.i);}
   showCandidates();paintFrame();return incoming.length>0;
- }catch(e){if(token===session&&version===segmentVersion)$('segment-status').textContent=`分割失败：${e.message}`;}
- finally{segmentBusy=false;updateSegmentButtons();}
+ }catch(e){if(token===session&&version===segmentVersion){$('segment-status').textContent=`分割失败：${e.message}`;if(manual)$('hold-status').textContent='区域识别失败，可选择“手动画轮廓”继续；未添加点标记。';}}
+ finally{segmentBusy=false;updateSegmentButtons();paintFrame();}
 }
 function syncHolds(){
  $('hold-count').textContent=`${holds.length} 个标记`;$('clear-holds').disabled=!holds.length;
@@ -439,5 +470,5 @@ function captureCoachImages(){
 }
 initCoach(()=>({snapshot:last,source,session,active,paused:video.paused,videoTime:video.currentTime,historyFrames:frame,fixedCamera:$('fixed-camera').checked,
  holds:holds.map(h=>({id:h.id,x:h.x,y:h.y,source:h.source||'manual',colors:h.colors||[],polygon:h.polygon||null})),captureImages:captureCoachImages,
- selectedCandidates:segmentSelected.size,holdProcessing:segmentBusy||batchRunning,
- freezeForCoach:()=>{pauseForMarking();if(segmentSelected.size)acceptSelected();$('play').textContent='播放';}}));
+ selectedCandidates:segmentSelected.size,holdProcessing:segmentBusy||batchRunning||holdEditor.drawing,
+ freezeForCoach:()=>{holdEditor.cancel();pauseForMarking();if(segmentSelected.size)acceptSelected();$('play').textContent='播放';}}));

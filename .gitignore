@@ -13,3 +13,4 @@ knowledge-library/imports/*
 !knowledge-library/imports/.gitkeep
 artifacts/
 models/local/
+models/local.zip

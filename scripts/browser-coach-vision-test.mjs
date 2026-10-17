@@ -1,3 +1,4 @@
+import {drawHold} from './helpers/hold-regions.mjs';
 import {chromium} from 'playwright';
 import assert from 'node:assert/strict';
 import {mkdir,writeFile} from 'node:fs/promises';
@@ -30,7 +31,7 @@ try{
  await page.check('#fixed-camera');await page.selectOption('#sample',{index:1});
  await page.waitForFunction(()=>!document.querySelector('#coach-run').disabled&&document.querySelector('#hip').textContent!=='—',null,{timeout:60000});
  await page.click('#mark-holds');await page.locator('#canvas').scrollIntoViewIfNeeded();
- const rect=await page.locator('#canvas').boundingBox();await page.mouse.click(rect.x+rect.width*.3,rect.y+rect.height*.4);
+ await drawHold(page,.3,.4);
  await page.locator('summary').filter({hasText:'我的指导提示词'}).click();
  await page.fill('#coach-custom-prompt','优先脚法与髋部位置，每次只提醒一个动作。');
  await page.click('#coach-test');await page.waitForFunction(()=>document.querySelector('#coach-mode').value==='llm');

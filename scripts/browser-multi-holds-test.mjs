@@ -1,3 +1,4 @@
+import {drawHold} from './helpers/hold-regions.mjs';
 import {chromium} from 'playwright';
 import {readFile,writeFile} from 'node:fs/promises';
 import assert from 'node:assert/strict';
@@ -28,7 +29,7 @@ try{
  assert.equal(before.holds.length,selected);assert.deepEqual(after.holds,before.holds);assert.ok(after.frame>before.frame+10);assert.ok((after.video_seconds-before.video_seconds+duration)%duration>.5);assert.equal(requests.length,nRequests,'No segmentation requests while pose tracking');assert.ok(after.landmarks.length>0);assert.notDeepEqual(after.landmarks,before.landmarks);
  await page.locator('#canvas').screenshot({path:'artifacts/multi-holds-live.png'});
  // Add manual points to the same holds, undo the last one, then keep tracking.
- await page.click('#mark-holds');await clickPoint(.2,.1);await clickPoint(.4,.1);await page.click('#undo-hold');const manual=await snapshot('multi-holds-manual');assert.equal(manual.holds.length,selected+1);await page.click('#holds-play');await page.waitForFunction(()=>!document.querySelector('#video').paused);
+ await page.click('#mark-holds');await drawHold(page,.2,.1);await drawHold(page,.4,.1);await page.click('#undo-hold');const manual=await snapshot('multi-holds-manual');assert.equal(manual.holds.length,selected+1);await page.click('#holds-play');await page.waitForFunction(()=>!document.querySelector('#video').paused);
  // Cancel a batch during its first request. No second prompt may run or revive a stale mask.
  let release,intercepted=0;
  await page.route('**/api/models/*/infer*',async route=>{intercepted++;await new Promise(r=>release=r);await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({model:'mobilesam',runtime:'test',inference_ms:1,polygons:[[[.1,.1],[.2,.1],[.2,.2],[.1,.2]]]})});});

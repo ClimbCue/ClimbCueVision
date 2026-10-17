@@ -1,3 +1,4 @@
+import {drawHold} from './helpers/hold-regions.mjs';
 import {chromium} from 'playwright';
 import {mkdir,writeFile,readFile} from 'node:fs/promises';
 import assert from 'node:assert/strict';
@@ -46,11 +47,11 @@ try{
  await page.click('#mark-holds');
  await page.locator('#canvas').scrollIntoViewIfNeeded();
  let rect=await page.locator('#canvas').boundingBox();
- await page.mouse.click(rect.x+rect.width*.3,rect.y+rect.height*.4);
+ await drawHold(page,.3,.4);
  assert.equal(await page.locator('#hold-count').textContent(),'1 个标记');
  await page.check('#mirror');
  await page.locator('#canvas').scrollIntoViewIfNeeded();rect=await page.locator('#canvas').boundingBox();
- await page.mouse.click(rect.x+rect.width*.3,rect.y+rect.height*.4);
+ await drawHold(page,.3,.4);
  assert.equal(await page.locator('#hold-count').textContent(),'2 个标记');
  await page.click('#play');
  await page.waitForFunction(()=>document.querySelector('#center-speed').textContent!=='—');
