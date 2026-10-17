@@ -1,0 +1,92 @@
+[
+  {
+    "id": "bmc-footwork",
+    "title": "脚法技术",
+    "original_title": "Footwork techniques when climbing",
+    "source": "https://www.thebmc.co.uk/en/footwork-techniques-when-climbing-video",
+    "video_url": "https://www.youtube.com/watch?v=UO-xvkNeQC8",
+    "checked_at": "2026-10-17T01:26:13.667964+00:00",
+    "content_level": "metadata",
+    "local_file": null
+  },
+  {
+    "id": "bmc-route-reading",
+    "title": "攀岩读线",
+    "original_title": "How to route read when climbing",
+    "source": "https://www.thebmc.co.uk/en/how-to-route-read-when-climbing-video",
+    "video_url": "https://www.youtube.com/watch?v=Df37ekYa54o",
+    "checked_at": "2026-10-17T01:26:13.667964+00:00",
+    "content_level": "metadata",
+    "local_file": null
+  },
+  {
+    "id": "bmc-hand-positions",
+    "title": "抓点与手部位置",
+    "original_title": "Hand positions when climbing",
+    "source": "https://www.thebmc.co.uk/en/hand-positions-when-climbing-video",
+    "video_url": "https://www.youtube.com/watch?v=FhtZRNJ8XZk",
+    "checked_at": "2026-10-17T01:26:13.667964+00:00",
+    "content_level": "metadata",
+    "local_file": null
+  },
+  {
+    "id": "bmc-rockover",
+    "title": "重心转移 Rockover",
+    "original_title": "How to rockover when climbing",
+    "source": "https://www.thebmc.co.uk/en/how-to-rockover-when-climbing-video",
+    "video_url": "https://www.youtube.com/watch?v=yU-VDgLBIgM",
+    "checked_at": "2026-10-17T01:26:13.667964+00:00",
+    "content_level": "metadata",
+    "local_file": null
+  },
+  {
+    "id": "bmc-heel-hook",
+    "title": "脚跟勾 Heel hook",
+    "original_title": "How to heel hook when climbing",
+    "source": "https://www.thebmc.co.uk/en/how-to-heel-hook-video",
+    "video_url": "https://www.youtube.com/watch?v=A29Mc-jN7VY",
+    "checked_at": "2026-10-17T01:26:13.667964+00:00",
+    "content_level": "metadata",
+    "local_file": null
+  },
+  {
+    "id": "bmc-toe-hook",
+    "title": "脚尖勾 Toe hook",
+    "original_title": "How to toe hook when climbing",
+    "source": "https://www.thebmc.co.uk/en/how-to-toe-hook-video",
+    "video_url": "https://www.youtube.com/watch?v=7zPANu7nuJE",
+    "checked_at": "2026-10-17T01:26:13.667964+00:00",
+    "content_level": "metadata",
+    "local_file": null
+  },
+  {
+    "id": "bmc-warmup",
+    "title": "攀岩前热身",
+    "original_title": "How to warm up for a climbing session",
+    "source": "https://www.thebmc.co.uk/en/how-to-warm-up-for-a-climbing-session-video",
+    "video_url": "https://www.youtube.com/watch?v=CmJVynMbslI",
+    "checked_at": "2026-10-17T01:26:13.667964+00:00",
+    "content_level": "metadata",
+    "local_file": null
+  },
+  {
+    "id": "bmc-training",
+    "title": "攀岩训练原则",
+    "original_title": "Training principles for climbing",
+    "source": "https://www.thebmc.co.uk/en/training-principles-for-climbing-video",
+    "video_url": "https://www.youtube.com/watch?v=LDP2tJ2nrR8",
+    "checked_at": "2026-10-17T01:26:13.667964+00:00",
+    "content_level": "metadata",
+    "local_file": null
+  },
+  {
+    "id": "bmc-matching",
+    "title": "换手与手指匹配",
+    "original_title": "Finger matching technique when climbing",
+    "source": "https://www.thebmc.co.uk/en/finger-matching-technique-when-climbing-video",
+    "video_url": "https://www.youtube.com/watch?v=JCYkrpFcrP0",
+    "checked_at": "2026-10-17T01:26:13.667964+00:00",
+    "content_level": "metadata",
+    "local_file": null
+  }
+]

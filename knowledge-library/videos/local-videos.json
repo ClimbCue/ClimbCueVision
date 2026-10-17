@@ -1,0 +1,18 @@
+[
+  {
+    "file": "testvideos/17c4aca2628ae921a529a54205697a0d.mp4",
+    "bytes": 370494,
+    "role": "pose_test_fixture",
+    "content_level": "unannotated",
+    "transcript": null,
+    "notes": "仓库原有视频，只用于本地播放与姿态推理；未审核为教练知识。"
+  },
+  {
+    "file": "testvideos/30a8767fc7ed3780bf60efbee39d3eac.mp4",
+    "bytes": 516774,
+    "role": "pose_test_fixture",
+    "content_level": "unannotated",
+    "transcript": null,
+    "notes": "仓库原有视频，只用于本地播放与姿态推理；未审核为教练知识。"
+  }
+]

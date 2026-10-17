@@ -1,0 +1,15 @@
+.DS_Store
+.venv/
+node_modules/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+web/static/vendor/
+web/static/models/
+web/runtime/
+knowledge-rag/runtime/
+knowledge-library/imports/*
+!knowledge-library/imports/.gitkeep
+artifacts/
+models/local/

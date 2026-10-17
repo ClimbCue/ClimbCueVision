@@ -1,0 +1,10 @@
+[
+  {"query":"脚法踩点","expected_id":"footwork-basics"},
+  {"query":"侧拉平衡","expected_id":"balance-sidepull"},
+  {"query":"髋部省力","expected_id":"hip-efficiency"},
+  {"query":"单个IMU传感器","expected_id":"imu-boundary"},
+  {"query":"停顿卡点","expected_id":"pause-observation"},
+  {"query":"岩点邻近接触","expected_id":"contact-boundary"},
+  {"query":"量子计算","expected_id":null},
+  {"query":"北京天气","expected_id":null}
+]

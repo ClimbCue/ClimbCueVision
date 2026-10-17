@@ -1,0 +1,376 @@
+{
+  "source": "https://joymaas.jd.com/models",
+  "public_catalog_api": "https://joymaas.jd.com/api/v1/models/listCSquareModels",
+  "count": 41,
+  "models": [
+    {
+      "name": "MiMo-V2.6-Flash",
+      "description": "全模态、高智能、低成本的高效推理模型，面向专业办公中的高频调用与规模化任务的最佳均衡之选。",
+      "inputModalities": "[\"text\", \"image\", \"audio\", \"video\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "testing",
+      "supportedProtocols": "[\"openai_chat_completions\", \"openai_responses\", \"anthropic_messages\"]",
+      "readmeUrl": "https://aiagent.s3.cn-north-1.jdcloud-oss.com/llm-model/std-MiMo-V2.6-Flash_readme.md"
+    },
+    {
+      "name": "MiMo-V2.6-Pro",
+      "description": "Xiaomi MiMo 迄今最强大的全模态旗舰模型，面向专业、长程、复杂工作流，并兼顾科学研究、网络安全等高阶能力。",
+      "inputModalities": "[\"text\", \"image\", \"video\", \"audio\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "testing",
+      "supportedProtocols": "[\"openai_chat_completions\", \"anthropic_messages\", \"openai_responses\"]",
+      "readmeUrl": "https://aiagent.s3.cn-north-1.jdcloud-oss.com/llm-model/std-MiMo-V2.6-Pro_readme.md"
+    },
+    {
+      "name": "Qwen3-Reranker-8B-enhance",
+      "description": "阿里云推出的通义千问重排序模型，用于检索结果的精排与相关性判断。",
+      "inputModalities": "[\"text\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"rerank\"]",
+      "readmeUrl": "https://joybuilder.s3.cn-north-1.jdcloud-oss.com/llm-model/std-Qwen3-Reranker-8B-enhance_readme.md"
+    },
+    {
+      "name": "Qwen3.5-122B-A10B",
+      "description": "阿里云推出的通义千问大语言模型，支持长上下文理解与生成。",
+      "inputModalities": "[\"text\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "https://joybuilder.s3.cn-north-1.jdcloud-oss.com/llm-model/std-Qwen3.5-122B-A10B_readme.md"
+    },
+    {
+      "name": "MiniMax-H3",
+      "description": "MiniMax H3 是 MiniMax 推出的通用全模态音视频生成模型，支持文 / 图 / 音 / 视频多参考输入，原生同步立体声，最高生成 15 秒 2K@24fps 视频。",
+      "inputModalities": "[\"text\", \"image\", \"audio\", \"video\"]",
+      "outputModalities": "[\"video\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"minimax_video_generation\"]",
+      "readmeUrl": "https://joybuilder.s3.cn-north-1.jdcloud-oss.com/llm-model/std-MiniMax-H3_readme.md"
+    },
+    {
+      "name": "Kimi-K2-250905",
+      "description": "月之暗面推出的开源大语言模型更新版本，支持百万级上下文。",
+      "inputModalities": "[\"text\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "https://joybuilder.s3.cn-north-1.jdcloud-oss.com/llm-model/std-Kimi-K2-250905_readme.md"
+    },
+    {
+      "name": "Kimi-K2",
+      "description": "月之暗面推出的开源大语言模型，支持百万级上下文与长文本理解。",
+      "inputModalities": "[\"text\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "https://joybuilder.s3.cn-north-1.jdcloud-oss.com/llm-model/std-Kimi-K2_readme.md"
+    },
+    {
+      "name": "Medcode-v1",
+      "description": "京东推出的医疗代码大语言模型，面向医疗场景的代码生成与理解。",
+      "inputModalities": "[\"text\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "https://joybuilder.s3.cn-north-1.jdcloud-oss.com/llm-model/std-Medcode-v1_readme.md"
+    },
+    {
+      "name": "LiveTTS",
+      "description": "京东推出的实时语音合成模型，支持文本转语音与流式合成。",
+      "inputModalities": "[\"text\"]",
+      "outputModalities": "[\"audio\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "https://joybuilder.s3.cn-north-1.jdcloud-oss.com/llm-model/std-LiveTTS_readme.md"
+    },
+    {
+      "name": "JoyAI-VL-Interaction",
+      "description": "京东推出的多模态交互大语言模型，支持图文理解与对话。",
+      "inputModalities": "[\"text\", \"image\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "https://joybuilder.s3.cn-north-1.jdcloud-oss.com/llm-model/std-JoyAI-VL-Interaction_readme.md"
+    },
+    {
+      "name": "GLM-5.3",
+      "description": "智谱AI推出的旗舰级大语言模型，支持百万级上下文与复杂推理。",
+      "inputModalities": "[\"text\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "https://joybuilder.s3.cn-north-1.jdcloud-oss.com/llm-model/std-GLM-5.3_readme.md"
+    },
+    {
+      "name": "jd/deepseek-v4-pro-0813",
+      "description": "深度求索推出的旗舰级大语言模型，具备更强的推理与生成能力。",
+      "inputModalities": "[\"text\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\", \"anthropic_messages\", \"openai_responses\"]",
+      "readmeUrl": "https://joybuilder.s3.cn-north-1.jdcloud-oss.com/llm-model/std-DeepSeek-V4-Pro-0813_readme.md"
+    },
+    {
+      "name": "DeepSeek-V3-0324",
+      "description": "深度求索推出的高性能大语言模型，支持长上下文理解与生成。",
+      "inputModalities": "[\"text\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "深度求索推出的大语言模型，支持长上下文理解与生成，适用于对话问答、内容创作、代码生成等场景。"
+    },
+    {
+      "name": "DeepSeek-R1-0528",
+      "description": "深度求索推出的大语言模型，支持长上下文理解与生成，适用于对话问答、内容创作、代码生成等场景。",
+      "inputModalities": "[\"text\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "深度求索推出的大语言模型，支持长上下文理解与生成，适用于对话问答、内容创作、代码生成等场景。"
+    },
+    {
+      "name": "ViduQ2-Turbo",
+      "description": "Vidu Turbo 视频生成模型，适合快速生成高动态视频内容。",
+      "inputModalities": "[\"text\", \"image\"]",
+      "outputModalities": "[\"video\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"async task\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/Vidu-Q2-turbo/Vidu-Q2-turbo.md"
+    },
+    {
+      "name": "ViduQ2-Pro",
+      "description": "Vidu Pro 视频生成模型，适合精细视频创作和复杂镜头表现。",
+      "inputModalities": "[\"text\", \"image\"]",
+      "outputModalities": "[\"video\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"async task\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/Vidu-Q2-pro/Vidu-Q2-pro.md"
+    },
+    {
+      "name": "ViduQ2",
+      "description": "Vidu 视频生成模型，适合高一致性、高动态性视频创作。",
+      "inputModalities": "[\"text\", \"image\"]",
+      "outputModalities": "[\"video\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"async task\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/Vidu-Q2/Vidu-Q2.md"
+    },
+    {
+      "name": "Qwen3-8B",
+      "description": "通义轻量语言模型，适合推理、指令遵循和通用文本任务。",
+      "inputModalities": "[\"text\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/Qwen3-8B/Qwen3-8B.md"
+    },
+    {
+      "name": "Qwen3-32B",
+      "description": "通义 Qwen3 语言模型，适合推理、指令遵循和多语言任务。",
+      "inputModalities": "[\"text\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/Qwen3-32B/Qwen3-32B.md"
+    },
+    {
+      "name": "Qwen3-235B-A22B",
+      "description": "通义大规模语言模型，适合推理、指令遵循和多语言任务。",
+      "inputModalities": "[\"text\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\", \"batch\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/Qwen3-235B-A22B/Qwen3-235B-A22B.md"
+    },
+    {
+      "name": "Qwen3.6-35B-A3B",
+      "description": "Qwen3.6系列35B-A3B原生视觉语言模型，基于混合架构设计，融合了线性注意力机制与稀疏混合专家模型，实现了更高的推理效率。模型效果相较3.5-35B-A3B显著提升了agentic coding能力、数学推理和代码推理能力、空间智能能力、物体定位与目标检测能力。",
+      "inputModalities": "[\"text\", \"image\", \"video\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/2026/qwen/Qwen3.6-35B-A3B.md"
+    },
+    {
+      "name": "Qwen3.5-397B-A17B",
+      "description": "通义大规模多模态模型，适合图文视频理解、代码和智能体任务。",
+      "inputModalities": "[\"text\", \"image\", \"video\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/2026/qwen/Qwen3.5-397B-A17B.md"
+    },
+    {
+      "name": "MiniMax-M3",
+      "description": "MiniMax 多模态模型，支持文本、图片和视频输入理解。",
+      "inputModalities": "[\"text\", \"image\", \"video\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/2026/minimax/Minimax-M3.md"
+    },
+    {
+      "name": "MiniMax-M2.7",
+      "description": "MiniMax 智能体模型，适合复杂生产力任务和工具协同。",
+      "inputModalities": "[\"text\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/2026/minimax/minimax2.7.md"
+    },
+    {
+      "name": "MiniMax-M2.5",
+      "description": "MiniMax 生产力模型，适合编程、工具调用和办公场景。",
+      "inputModalities": "[\"text\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/2026/minimax/MiniMax-M2.5.md"
+    },
+    {
+      "name": "Kling-V3",
+      "description": "可灵视频生成模型，支持多模态输入、音画同步和主体一致性控制。",
+      "inputModalities": "[\"text\", \"image\", \"video\"]",
+      "outputModalities": "[\"video\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"async task\", \"image_generation\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/2026/KelingAI/Kling-V3.md"
+    },
+    {
+      "name": "kimi-k3",
+      "description": "Kimi 长上下文模型，支持多模态理解、思考和工具调用。",
+      "inputModalities": "[\"text\", \"image\", \"video\", \"file\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/2026/kimi/Kimi-k3.md"
+    },
+    {
+      "name": "Kimi-K2.6",
+      "description": "Kimi K 系列模型，适合代码、长程任务和智能体协作。",
+      "inputModalities": "[\"text\", \"image\", \"video\", \"file\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/2026/kimi/kimi-k2.6.md"
+    },
+    {
+      "name": "Kimi-K2.5",
+      "description": "Kimi K 系列多模态模型，支持视觉输入和智能体任务。",
+      "inputModalities": "[\"text\", \"image\", \"file\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/2026/kimi/Kimi-K2.5.md"
+    },
+    {
+      "name": "GLM-5.2",
+      "description": "智谱长上下文模型，适合代码、科研复现和长程任务。",
+      "inputModalities": "[\"text\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/2026/zhipu/GLM-5.2.md"
+    },
+    {
+      "name": "GLM-5.1",
+      "description": "智谱 GLM 系列模型，适合复杂工程、代码和智能体任务。",
+      "inputModalities": "[\"text\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/2026/glm/GLM-5.1.md"
+    },
+    {
+      "name": "GLM-5",
+      "description": "智谱大规模语言模型，适合复杂工程和长周期智能体任务。",
+      "inputModalities": "[\"text\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/2026/glm/GLM-5.md"
+    },
+    {
+      "name": "GLM-4.7",
+      "description": "智谱 GLM 系列模型，适合代码生成、工具协同与长程任务。",
+      "inputModalities": "[\"text\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/2026/glm/GLM-4.7.md"
+    },
+    {
+      "name": "GLM-4.6V",
+      "description": "智谱多模态模型，适合视觉理解、图像问答和智能体场景。",
+      "inputModalities": "[\"text\", \"image\", \"video\", \"file\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/2026/glm/GLM-4.6V%20%20.md"
+    },
+    {
+      "name": "DeepSeek-V4-Pro",
+      "description": "大规模混合专家模型，适合复杂推理、高阶代码和智能体场景。",
+      "inputModalities": "[\"text\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\", \"batch\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/2026/DeepSeek/DeepSeek-V4-Pro.md"
+    },
+    {
+      "name": "DeepSeek-V4-Flash",
+      "description": "轻量化混合专家模型，适合高频对话、开发和轻量智能体任务。",
+      "inputModalities": "[\"text\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\", \"batch\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/2026/DeepSeek/DeepSeek-V4-Flash.md"
+    },
+    {
+      "name": "DeepSeek-V3.2",
+      "description": "兼顾推理质量与输出效率，适合问答和通用智能体任务。",
+      "inputModalities": "[\"text\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\", \"batch\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/DeepSeek-V3.2/DeepSeek-V3.2.md"
+    },
+    {
+      "name": "deepseek-v3-1-250821",
+      "description": "DeepSeek 混合推理模型，支持思考与非思考两种模式。",
+      "inputModalities": "[\"text\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/DeepSeek-V3.1/DeepSeek-V3.1.md"
+    },
+    {
+      "name": "DeepSeek-V3",
+      "description": "混合专家语言模型，适合文本生成、代码和通用推理。",
+      "inputModalities": "[\"text\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/DeepSeek-V3-0324/README.md"
+    },
+    {
+      "name": "DeepSeek-R1",
+      "description": "由杭州深度求索人工智能基础技术研究有限公司自研，在数学、代码、自然语言推理等任务上性能表现优异。",
+      "inputModalities": "[\"text\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/DeepSeek-R1/README.md"
+    },
+    {
+      "name": "DeepSeek-OCR",
+      "description": "这是一个从 LLM 为中心的角度研究视觉编码器作用的模型",
+      "inputModalities": "[\"text\", \"image\"]",
+      "outputModalities": "[\"text\"]",
+      "publishStatus": "publish",
+      "supportedProtocols": "[\"openai_chat_completions\"]",
+      "readmeUrl": "https://maas.s3.cn-north-1.jdcloud-oss.com/DeepSeek-OCR/DeepSeek-OCR.md"
+    }
+  ]
+}

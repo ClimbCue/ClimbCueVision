@@ -1,0 +1,27 @@
+{
+  "name": "climbcue-vision-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "setup:pose": "node scripts/setup-pose.mjs",
+    "test": "node --test web/tests/*.test.mjs",
+    "test:e2e": "node scripts/browser-test.mjs",
+    "test:knowledge": "node scripts/browser-recovery-test.mjs",
+    "test:climbing": "node scripts/browser-climbing-test.mjs",
+    "setup:models": ".venv/bin/python scripts/setup-local-models.py",
+    "test:models": "node scripts/browser-models-test.mjs",
+    "test:coach": "node scripts/browser-coach-test.mjs",
+    "test:segmentation": "node scripts/browser-segmentation-test.mjs",
+    "test:multi-holds": "node scripts/browser-multi-holds-test.mjs",
+    "test:color-holds": "node scripts/browser-color-holds-test.mjs",
+    "test:hold-selection": "node scripts/browser-hold-selection-test.mjs",
+    "test:coach-vision": "node scripts/browser-coach-vision-test.mjs"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "1.1.1"
+  },
+  "devDependencies": {
+    "playwright": "^1.56.1"
+  }
+}

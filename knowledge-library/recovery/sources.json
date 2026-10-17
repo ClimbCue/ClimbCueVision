@@ -1,0 +1,1296 @@
+{
+  "version": 1,
+  "checked_at": "2026-10-17",
+  "curation_note": "中文原创学习摘要与原始出处，不保存或翻译原站全文。reviewed 仅表示来源与摘要核对，不代表临床审核。",
+  "sources": [
+    {
+      "id": "lattice-mobility",
+      "title": "攀岩活动度：被动柔韧与主动控制",
+      "publisher": "Lattice Training",
+      "url": "https://www.latticetraining.com/blog/why-is-flexibility-important-in-climbing",
+      "evidence_type": "教练指导",
+      "topics": [
+        "髋部",
+        "主动活动度"
+      ],
+      "verification_scope": "已核对原始网页正文或官方 PDF 的相关段落",
+      "checked_at": "2026-10-17",
+      "limitations": "攀岩教练的训练建议，不是临床试验或伤病治疗处方；按个人能力调整。",
+      "entries": [
+        {
+          "key": "active",
+          "title": "柔韧性不等于主动活动度",
+          "text": "被动能到达的位置，不一定能在岩壁上主动保持。Lattice 建议把活动范围与该范围内的力量、控制结合。",
+          "tags": [
+            "主动活动度",
+            "被动柔韧",
+            "mobility"
+          ]
+        },
+        {
+          "key": "hips",
+          "title": "活动度与高抬脚、撑桥的联系",
+          "text": "髋部活动范围可能增加高抬脚、挂跟和撑桥的动作选择。训练目标应结合实际动作，出现夹痛或关节不适时不要继续加深幅度。",
+          "tags": [
+            "高抬脚",
+            "撑桥",
+            "髋部活动度"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lattice-pike",
+      "title": "Pike：腿后侧柔韧与主动抬腿",
+      "publisher": "Lattice Training",
+      "url": "https://www.latticetraining.com/blog/flexibility-for-climbing-improve-your-pike",
+      "evidence_type": "教练指导",
+      "topics": [
+        "腿后侧",
+        "高抬脚"
+      ],
+      "verification_scope": "已核对原始网页正文或官方 PDF 的相关段落",
+      "checked_at": "2026-10-17",
+      "limitations": "攀岩教练的训练建议，不是临床试验或伤病治疗处方；按个人能力调整。",
+      "entries": [
+        {
+          "key": "hamstring",
+          "title": "腿后侧柔韧与挂跟",
+          "text": "Pike 训练关注腿后侧活动范围，可对应攀岩高脚点和挂跟的需求。应循序渐进，不以一次折叠得更深作为唯一进步标准。",
+          "tags": [
+            "腿后侧",
+            "腘绳肌",
+            "pike",
+            "挂跟"
+          ]
+        },
+        {
+          "key": "control",
+          "title": "柔韧训练之后仍要练主动抬腿",
+          "text": "Lattice 的 Pike 训练把拉伸与主动控制结合；能被动拉到的位置，还需要主动抬腿能力才能用于攀爬。",
+          "tags": [
+            "主动抬腿",
+            "柔韧训练",
+            "高脚点"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lattice-pancake",
+      "title": "Pancake：分腿前屈与髋部控制",
+      "publisher": "Lattice Training",
+      "url": "https://www.latticetraining.com/blog/flexibility-for-climbers-improve-your-pancake",
+      "evidence_type": "教练指导",
+      "topics": [
+        "内收肌",
+        "髋部"
+      ],
+      "verification_scope": "已核对原始网页正文或官方 PDF 的相关段落",
+      "checked_at": "2026-10-17",
+      "limitations": "攀岩教练的训练建议，不是临床试验或伤病治疗处方；按个人能力调整。",
+      "entries": [
+        {
+          "key": "range",
+          "title": "分腿前屈与髋内收肌",
+          "text": "Pancake 分腿前屈涉及腿后侧和髋内收肌的活动范围，面向开髋、正面贴壁及压缩动作的需要。",
+          "tags": [
+            "分腿前屈",
+            "内收肌",
+            "pancake",
+            "开髋"
+          ]
+        },
+        {
+          "key": "pelvis",
+          "title": "分腿前屈避免用弓背代替髋折叠",
+          "text": "Lattice 强调骨盆与躯干位置；单纯弓背贴近地面，不代表髋部活动范围同样增加。降低幅度，关注从髋部折叠的控制。",
+          "tags": [
+            "骨盆控制",
+            "弓背",
+            "髋折叠"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lattice-side-split",
+      "title": "侧劈叉：宽站距与开髋训练",
+      "publisher": "Lattice Training",
+      "url": "https://latticetraining.com/blog/flexibility-for-climbers-how-to-improve-your-side-split",
+      "evidence_type": "教练指导",
+      "topics": [
+        "内收肌",
+        "撑桥"
+      ],
+      "verification_scope": "已核对原始网页正文或官方 PDF 的相关段落",
+      "checked_at": "2026-10-17",
+      "limitations": "攀岩教练的训练建议，不是临床试验或伤病治疗处方；按个人能力调整。",
+      "entries": [
+        {
+          "key": "stance",
+          "title": "侧向活动度帮助使用较宽脚点",
+          "text": "侧劈叉方向的活动度与宽站距、撑桥及髋部靠近岩壁有关。攀岩需要的是可使用的范围，不必把完全劈叉当作统一目标。",
+          "tags": [
+            "侧劈叉",
+            "宽站距",
+            "side split"
+          ]
+        },
+        {
+          "key": "strength",
+          "title": "开髋训练也需要力量与控制",
+          "text": "Lattice 的侧劈叉训练结合主动、被动活动度和力量练习，而非只停留在被动压腿。负荷和幅度应逐步适应。",
+          "tags": [
+            "开髋力量",
+            "内收肌训练",
+            "主动柔韧"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lattice-front-split",
+      "title": "前后分腿：不同腿位的活动度",
+      "publisher": "Lattice Training",
+      "url": "https://latticetraining.com/blog/flexibility-for-climbers-improve-your-front-split",
+      "evidence_type": "教练指导",
+      "topics": [
+        "髋屈肌",
+        "腿后侧"
+      ],
+      "verification_scope": "已核对原始网页正文或官方 PDF 的相关段落",
+      "checked_at": "2026-10-17",
+      "limitations": "攀岩教练的训练建议，不是临床试验或伤病治疗处方；按个人能力调整。",
+      "entries": [
+        {
+          "key": "positions",
+          "title": "前后分腿涉及前后腿不同的需求",
+          "text": "前后分腿训练涉及前腿腿后侧与后腿髋前侧等部位的不同需求。采用逐步、可控的练习，不靠突然下压获得幅度。",
+          "tags": [
+            "前后分腿",
+            "髋屈肌",
+            "front split"
+          ]
+        },
+        {
+          "key": "progress",
+          "title": "活动范围要和主动控制一起进阶",
+          "text": "Lattice 的前后分腿教程把主动活动与拉伸组合。攀岩应用上，应把新增范围转成能主动控制的动作；这属于训练应用的推论。",
+          "tags": [
+            "纵叉",
+            "活动范围进阶",
+            "髋前侧"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lattice-deload",
+      "title": "攀岩减量周：安排训练与恢复",
+      "publisher": "Lattice Training",
+      "url": "https://www.latticetraining.com/blog/do_climbers_need_deload_weeks",
+      "evidence_type": "教练指导",
+      "topics": [
+        "减量周",
+        "负荷管理"
+      ],
+      "verification_scope": "已核对原始网页正文或官方 PDF 的相关段落",
+      "checked_at": "2026-10-17",
+      "limitations": "攀岩教练的训练建议，不是临床试验或伤病治疗处方；按个人能力调整。",
+      "entries": [
+        {
+          "key": "week",
+          "title": "减量周通过降低训练负荷恢复",
+          "text": "减量周是在训练周期中主动减少负荷，给身体恢复和适应的机会。它可以保留部分运动与训练结构，不必等同于完全停练。",
+          "tags": [
+            "减量周",
+            "deload",
+            "训练负荷"
+          ]
+        },
+        {
+          "key": "adjust",
+          "title": "减量安排应结合训练和恢复情况",
+          "text": "Lattice 介绍周期性减量安排。实际周期需要结合训练积累与恢复情况，不能把一种周数模板当作所有攀岩者的固定要求。",
+          "tags": [
+            "训练周期",
+            "休息安排",
+            "减量安排"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lattice-poor-sleep",
+      "title": "没睡好时如何调整攀岩训练",
+      "publisher": "Lattice Training",
+      "url": "https://latticetraining.com/blog/the-effect-of-poor-sleep-on-your-training",
+      "evidence_type": "教练指导",
+      "topics": [
+        "睡眠",
+        "训练调整"
+      ],
+      "verification_scope": "已核对原始网页正文或官方 PDF 的相关段落",
+      "checked_at": "2026-10-17",
+      "limitations": "攀岩教练的训练建议，不是临床试验或伤病治疗处方；按个人能力调整。",
+      "entries": [
+        {
+          "key": "effort",
+          "title": "睡眠不足可能让同样训练更费力",
+          "text": "睡眠不佳可能影响协调，并提高主观用力感。当天表现下降时，应把睡眠纳入判断，不能只归因于力量退步。",
+          "tags": [
+            "睡眠不足",
+            "主观用力",
+            "协调"
+          ]
+        },
+        {
+          "key": "session",
+          "title": "睡眠不佳时调整训练难度",
+          "text": "Lattice 建议睡眠不佳时调整训练安排和负荷，可选择更简单或轻松的攀爬，而不是机械完成原定高强度任务。",
+          "tags": [
+            "没睡好",
+            "训练调整",
+            "轻松攀爬"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bmc-sport",
+      "title": "运动攀岩训练：柔韧与路线中的休息",
+      "publisher": "British Mountaineering Council",
+      "url": "https://www.thebmc.co.uk/en/how-to-train-for-sport-climbing",
+      "evidence_type": "教练指导",
+      "topics": [
+        "柔韧",
+        "路线休息"
+      ],
+      "verification_scope": "已核对原始网页正文或官方 PDF 的相关段落",
+      "checked_at": "2026-10-17",
+      "limitations": "攀岩教练的训练建议，不是临床试验或伤病治疗处方；按个人能力调整。",
+      "entries": [
+        {
+          "key": "flex",
+          "title": "攀岩柔韧包含不同训练形式",
+          "text": "BMC 区分被动和主动柔韧，主动训练又有静态、动态形式。选择练习时，需要明确目标是活动范围还是主动控制。",
+          "tags": [
+            "主动柔韧",
+            "动态柔韧",
+            "静态柔韧"
+          ]
+        },
+        {
+          "key": "rest",
+          "title": "利用路线休息点管理体力",
+          "text": "BMC 强调识别休息位置与安排节奏。较容易的段落和合适的休息点可以帮助管理整条路线的体力分配。",
+          "tags": [
+            "路线休息",
+            "攀爬节奏",
+            "休息点"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bmc-trad",
+      "title": "传统攀岩体能：下肢热身与省力休息",
+      "publisher": "British Mountaineering Council",
+      "url": "https://www.thebmc.co.uk/en/how-to-train-for-trad-climbing",
+      "evidence_type": "教练指导",
+      "topics": [
+        "下肢热身",
+        "壁上休息"
+      ],
+      "verification_scope": "已核对原始网页正文或官方 PDF 的相关段落",
+      "checked_at": "2026-10-17",
+      "limitations": "攀岩教练的训练建议，不是临床试验或伤病治疗处方；按个人能力调整。",
+      "entries": [
+        {
+          "key": "legs",
+          "title": "攀岩热身也要包括下肢",
+          "text": "BMC 的传统攀岩训练提示下肢活动对高抬脚和撑桥同样重要。攀前准备不能只关注手指与前臂。",
+          "tags": [
+            "下肢热身",
+            "攀前准备",
+            "撑桥热身"
+          ]
+        },
+        {
+          "key": "position",
+          "title": "休息姿势影响壁上恢复",
+          "text": "BMC 将寻找省力的休息姿势纳入体力管理。它是路线技能的一部分，不能替代训练之间的睡眠和休息。",
+          "tags": [
+            "壁上恢复",
+            "省力休息",
+            "休息姿势"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aaos-shoulder",
+      "title": "肩部与肩袖：拉伸、摆动和肩胛控制",
+      "publisher": "AAOS / ASES",
+      "url": "https://www.orthoinfo.org/recovery/rotator-cuff-and-shoulder-conditioning-program/",
+      "evidence_type": "临床康复指南",
+      "topics": [
+        "肩部",
+        "肩胛"
+      ],
+      "verification_scope": "已核对原始网页正文或官方 PDF 的相关段落",
+      "checked_at": "2026-10-17",
+      "limitations": "这是医疗机构的康复资料；伤病、术后及练习剂量应由医生或物理治疗师决定，不可套用为攀岩伤病处方。",
+      "entries": [
+        {
+          "key": "pendulum",
+          "title": "肩部钟摆练习的动作概念",
+          "text": "AAOS 的钟摆练习用另一只手支撑身体，让练习侧手臂放松垂下、轻柔摆动。它是康复方案中的动作示例，是否适合由专业人员判断。",
+          "tags": [
+            "肩部钟摆",
+            "肩部放松",
+            "pendulum"
+          ]
+        },
+        {
+          "key": "crossbody",
+          "title": "横抱肩拉伸不要用力压肘关节",
+          "text": "横向拉伸上臂时，扶持上臂并轻柔靠近胸前，避免把压力直接加在肘关节上；疼痛时停止。",
+          "tags": [
+            "横抱肩",
+            "肩后侧",
+            "肩部拉伸"
+          ]
+        },
+        {
+          "key": "scapula",
+          "title": "肩部保养不只有拉伸",
+          "text": "AAOS 肩部方案同时包含拉伸和力量练习，涉及肩袖与肩胛肌群。活动范围和稳定控制是不同目标。",
+          "tags": [
+            "肩袖",
+            "肩胛控制",
+            "肩部保养"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aaos-hip",
+      "title": "髋部：抱膝、腿后侧与旋转活动",
+      "publisher": "AAOS",
+      "url": "https://www.orthoinfo.org/recovery/hip-conditioning-program/",
+      "evidence_type": "临床康复指南",
+      "topics": [
+        "臀部",
+        "髋部",
+        "腘绳肌"
+      ],
+      "verification_scope": "已核对原始网页正文或官方 PDF 的相关段落",
+      "checked_at": "2026-10-17",
+      "limitations": "这是医疗机构的康复资料；伤病、术后及练习剂量应由医生或物理治疗师决定，不可套用为攀岩伤病处方。",
+      "entries": [
+        {
+          "key": "knee",
+          "title": "仰卧抱膝时避免强行牵拉",
+          "text": "AAOS 的抱膝动作是在仰卧位轻柔将一侧膝带向胸部，并保持腰背贴地；不靠猛拉增加幅度。",
+          "tags": [
+            "仰卧抱膝",
+            "臀部拉伸",
+            "髋部拉伸"
+          ]
+        },
+        {
+          "key": "hamstring",
+          "title": "仰卧腿后侧拉伸的扶持位置",
+          "text": "AAOS 的仰卧腘绳肌拉伸以手扶大腿后侧提供支持，再在舒适范围伸膝，不用拉拽膝关节来追求直腿。",
+          "tags": [
+            "仰卧腘绳肌",
+            "腿后侧拉伸",
+            "扶持大腿"
+          ]
+        },
+        {
+          "key": "rotation",
+          "title": "坐位髋部旋转保持骨盆稳定",
+          "text": "AAOS 坐位旋转拉伸提醒保持坐骨着地，避免靠身体前倾或失去坐姿稳定来换取更大幅度。",
+          "tags": [
+            "坐位髋旋转",
+            "骨盆稳定",
+            "臀外侧"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aaos-ankle",
+      "title": "足踝：直膝、屈膝小腿拉伸与踝控制",
+      "publisher": "AAOS",
+      "url": "https://www.orthoinfo.org/recovery/foot-and-ankle-conditioning-program/",
+      "evidence_type": "临床康复指南",
+      "topics": [
+        "小腿",
+        "踝部"
+      ],
+      "verification_scope": "已核对原始网页正文或官方 PDF 的相关段落",
+      "checked_at": "2026-10-17",
+      "limitations": "这是医疗机构的康复资料；伤病、术后及练习剂量应由医生或物理治疗师决定，不可套用为攀岩伤病处方。",
+      "entries": [
+        {
+          "key": "straight",
+          "title": "直膝靠墙拉伸小腿",
+          "text": "AAOS 直膝跟腱区域拉伸采用前后站姿，后腿膝伸直、脚跟贴地，缓慢前移身体；不以抬跟换取幅度。",
+          "tags": [
+            "直膝小腿拉伸",
+            "腓肠肌",
+            "脚跟贴地"
+          ]
+        },
+        {
+          "key": "bent",
+          "title": "屈膝小腿拉伸关注比目鱼肌",
+          "text": "屈膝版本保持后脚跟贴地，后膝轻屈，髋部居中。它与直膝版本的肌肉侧重不同。",
+          "tags": [
+            "屈膝小腿拉伸",
+            "比目鱼肌",
+            "踝背屈"
+          ]
+        },
+        {
+          "key": "balance",
+          "title": "踝部训练包含活动度、力量和平衡",
+          "text": "AAOS 足踝方案把拉伸、力量及平衡练习组合。踝部可用能力不能只用拉伸幅度衡量。",
+          "tags": [
+            "踝部训练",
+            "踝部平衡",
+            "足踝恢复"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aaos-elbow",
+      "title": "前臂与手腕：伸腕、屈腕拉伸的边界",
+      "publisher": "AAOS",
+      "url": "https://www.orthoinfo.org/globalassets/pdfs/exercise-program-for-epicondylitis.pdf",
+      "evidence_type": "临床康复指南",
+      "topics": [
+        "前臂",
+        "手腕",
+        "肘部"
+      ],
+      "verification_scope": "已核对原始网页正文或官方 PDF 的相关段落",
+      "checked_at": "2026-10-17",
+      "limitations": "这是医疗机构的康复资料；伤病、术后及练习剂量应由医生或物理治疗师决定，不可套用为攀岩伤病处方。",
+      "entries": [
+        {
+          "key": "extension",
+          "title": "伸腕方向拉伸前臂内侧",
+          "text": "手臂前伸、手腕向后伸，另一手轻扶掌部，直到前臂内侧出现轻柔牵拉感；不要锁死肘部，也不要拉到疼痛。",
+          "tags": [
+            "前臂内侧",
+            "伸腕拉伸",
+            "手腕拉伸"
+          ]
+        },
+        {
+          "key": "flexion",
+          "title": "屈腕方向拉伸前臂外侧",
+          "text": "掌心朝下、手指朝下弯腕，另一手轻柔辅助，使前臂外侧产生牵拉感；避免锁死肘部或强行加压。",
+          "tags": [
+            "前臂外侧",
+            "屈腕拉伸",
+            "前臂拉伸"
+          ]
+        },
+        {
+          "key": "scope",
+          "title": "肘部康复计划不能当作手指损伤处方",
+          "text": "这份 AAOS 计划面向网球肘、⾼尔夫球肘并要求专业监督。本库不直接套用其重复次数和疗程；也不能据此治疗攀岩手指滑车问题。",
+          "tags": [
+            "网球肘",
+            "高尔夫球肘",
+            "手指滑车",
+            "肘部康复"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aaos-spine",
+      "title": "躯干与背部：活动度和稳定训练",
+      "publisher": "AAOS",
+      "url": "https://www.orthoinfo.org/recovery/spine-conditioning-program/",
+      "evidence_type": "临床康复指南",
+      "topics": [
+        "背部",
+        "躯干"
+      ],
+      "verification_scope": "已核对原始网页正文或官方 PDF 的相关段落",
+      "checked_at": "2026-10-17",
+      "limitations": "这是医疗机构的康复资料；伤病、术后及练习剂量应由医生或物理治疗师决定，不可套用为攀岩伤病处方。",
+      "entries": [
+        {
+          "key": "rockback",
+          "title": "跪位后坐背部伸展保持颈部自然",
+          "text": "AAOS 背部伸展动作示例包含跪位向后坐、手臂向前延伸；头部与脊柱自然对齐，避免刻意抬头或强压幅度。",
+          "tags": [
+            "跪位后坐",
+            "背部伸展",
+            "背部拉伸"
+          ]
+        },
+        {
+          "key": "stability",
+          "title": "背部恢复应区分活动度与稳定训练",
+          "text": "AAOS 脊柱方案同时涉及拉伸和肌肉训练。背部疼痛的原因不能靠一次拉伸效果判断，伤病时需要个体化指导。",
+          "tags": [
+            "背部恢复",
+            "躯干稳定",
+            "腰背"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nhs-wrist",
+      "title": "腕伸肌拉伸：轻柔、放松与个体剂量",
+      "publisher": "South Tees Hospitals NHS",
+      "url": "https://www.southtees.nhs.uk/resources/wrist-extensor-stretch/",
+      "evidence_type": "临床康复指南",
+      "topics": [
+        "手腕",
+        "前臂"
+      ],
+      "verification_scope": "已核对原始网页正文或官方 PDF 的相关段落",
+      "checked_at": "2026-10-17",
+      "limitations": "这是医疗机构的康复资料；伤病、术后及练习剂量应由医生或物理治疗师决定，不可套用为攀岩伤病处方。",
+      "entries": [
+        {
+          "key": "relax",
+          "title": "腕伸肌拉伸时放松肩膀",
+          "text": "South Tees 的腕伸肌拉伸指导强调肩部放松，轻柔控制手腕位置。不要通过耸肩或强拉来追求拉伸感觉。",
+          "tags": [
+            "腕伸肌",
+            "肩膀放松",
+            "手腕紧张"
+          ]
+        },
+        {
+          "key": "dose",
+          "title": "手腕康复练习次数应按个体安排",
+          "text": "这份腕伸肌资料把保持时间、重复次数交给治疗师安排。攀后紧张与确诊伤病的练习剂量不能混为一谈。",
+          "tags": [
+            "手腕康复",
+            "拉伸次数",
+            "拉伸剂量"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nhs-cooldown",
+      "title": "运动后舒缓拉伸：臀、腿后侧和大腿",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/live-well/exercise/how-to-stretch-after-exercising/",
+      "evidence_type": "机构健康指南",
+      "topics": [
+        "攀后放松",
+        "臀部",
+        "大腿"
+      ],
+      "verification_scope": "已核对原始网页正文或官方 PDF 的相关段落",
+      "checked_at": "2026-10-17",
+      "limitations": "通用健康资料，并非攀岩专项试验；有伤病或术后限制时先咨询专业人员。",
+      "entries": [
+        {
+          "key": "glute",
+          "title": "仰卧臀部拉伸采用舒适范围",
+          "text": "NHS 示例把一侧脚踝放在另一侧大腿上，双手扶大腿后方轻柔拉近。保持舒适，不把压力硬压到膝关节上。",
+          "tags": [
+            "臀部拉伸",
+            "四字拉伸",
+            "攀后放松"
+          ]
+        },
+        {
+          "key": "quad",
+          "title": "侧卧大腿前侧拉伸保持两膝靠近",
+          "text": "侧卧股四头肌拉伸时，轻柔将上方脚跟带向臀部，两膝靠近，保持身体稳定；出现疼痛停止。",
+          "tags": [
+            "股四头肌",
+            "大腿前侧",
+            "侧卧拉伸"
+          ]
+        },
+        {
+          "key": "adductor",
+          "title": "坐位内侧大腿拉伸保持上身直立",
+          "text": "NHS 内侧大腿拉伸示例采用脚掌相对的坐姿，保持上身直立，在舒适范围感受牵拉，不强压膝盖。",
+          "tags": [
+            "蝴蝶坐",
+            "内侧大腿",
+            "坐位拉伸"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nhs-warmup",
+      "title": "一般运动热身：逐渐升温与关节活动",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/live-well/exercise/how-to-warm-up-before-exercising/",
+      "evidence_type": "机构健康指南",
+      "topics": [
+        "热身",
+        "攀前准备"
+      ],
+      "verification_scope": "已核对原始网页正文或官方 PDF 的相关段落",
+      "checked_at": "2026-10-17",
+      "limitations": "通用健康资料，并非攀岩专项试验；有伤病或术后限制时先咨询专业人员。",
+      "entries": [
+        {
+          "key": "sequence",
+          "title": "热身可从走动和轻柔摆臂开始",
+          "text": "NHS 的一般热身示例从原地踏步、摆臂、点脚跟等低负荷动作开始，逐渐让身体进入运动状态。",
+          "tags": [
+            "热身顺序",
+            "原地踏步",
+            "攀前热身"
+          ]
+        },
+        {
+          "key": "joints",
+          "title": "热身包含肩与膝等部位的轻柔活动",
+          "text": "NHS 示例还包含抬膝、转肩和浅屈膝。它是一般运动准备，不能独自替代攀岩特定动作的逐级适应。",
+          "tags": [
+            "关节热身",
+            "肩部热身",
+            "膝部热身"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nhs-flexibility",
+      "title": "轻柔柔韧练习：颈部、侧屈与进阶",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/live-well/exercise/flexibility-exercises/",
+      "evidence_type": "机构健康指南",
+      "topics": [
+        "颈部",
+        "侧屈",
+        "渐进练习"
+      ],
+      "verification_scope": "已核对原始网页正文或官方 PDF 的相关段落",
+      "checked_at": "2026-10-17",
+      "limitations": "通用健康资料，并非攀岩专项试验；有伤病或术后限制时先咨询专业人员。",
+      "entries": [
+        {
+          "key": "neck",
+          "title": "颈部转动在舒适范围内进行",
+          "text": "NHS 坐位颈部活动提示肩部下沉、缓慢转头，只到舒适范围。不要用手猛扳头部获得更大角度。",
+          "tags": [
+            "颈部活动",
+            "颈部拉伸",
+            "转头"
+          ]
+        },
+        {
+          "key": "side",
+          "title": "侧屈伸展不必追求最大幅度",
+          "text": "NHS 的侧屈练习在可接受的范围向一侧移动。初练者应从小幅度开始，逐渐建立习惯和耐受。",
+          "tags": [
+            "体侧拉伸",
+            "侧屈",
+            "渐进拉伸"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nhs-sitting",
+      "title": "坐姿活动：胸部、上背与踝部",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/live-well/exercise/sitting-exercises/",
+      "evidence_type": "机构健康指南",
+      "topics": [
+        "胸部",
+        "上背",
+        "踝部"
+      ],
+      "verification_scope": "已核对原始网页正文或官方 PDF 的相关段落",
+      "checked_at": "2026-10-17",
+      "limitations": "通用健康资料，并非攀岩专项试验；有伤病或术后限制时先咨询专业人员。",
+      "entries": [
+        {
+          "key": "chest",
+          "title": "坐姿胸部伸展保持肩部下沉",
+          "text": "使用稳固、不会滑动的椅子，坐直后肩部向后下方舒展，轻柔打开胸口；不靠耸肩完成动作。",
+          "tags": [
+            "胸部伸展",
+            "开胸",
+            "坐姿拉伸"
+          ]
+        },
+        {
+          "key": "twist",
+          "title": "坐姿上身转动保持髋部朝前",
+          "text": "坐姿躯干转动以舒适范围为限，髋部尽量保持原位。不要用手臂猛拉来增加旋转。",
+          "tags": [
+            "上背活动",
+            "坐姿转体",
+            "胸椎活动"
+          ]
+        },
+        {
+          "key": "ankle",
+          "title": "坐姿踝部屈伸用于轻柔活动",
+          "text": "坐位伸出一侧腿，轻柔完成脚尖前指与回勾，是无需负重的踝部活动示例。踝伤或术后需遵守专业限制。",
+          "tags": [
+            "踝部屈伸",
+            "脚尖回勾",
+            "久坐活动"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nhs-injury",
+      "title": "扭伤和拉伤：哪些情况不应继续硬拉",
+      "publisher": "NHS",
+      "url": "https://www.nhs.uk/conditions/sprains-and-strains/",
+      "evidence_type": "机构健康指南",
+      "topics": [
+        "疼痛",
+        "伤病边界"
+      ],
+      "verification_scope": "已核对原始网页正文或官方 PDF 的相关段落",
+      "checked_at": "2026-10-17",
+      "limitations": "通用健康资料，并非攀岩专项试验；有伤病或术后限制时先咨询专业人员。",
+      "entries": [
+        {
+          "key": "redflags",
+          "title": "明显肿胀或无法负重应寻求评估",
+          "text": "扭伤、拉伤后若疼痛或肿胀明显、持续加重，或无法正常负重和使用肢体，应及时就医评估。不要把它们当作普通攀后酸痛处理。",
+          "tags": [
+            "明显肿胀",
+            "无法负重",
+            "疼痛加重",
+            "扭伤"
+          ]
+        },
+        {
+          "key": "acute",
+          "title": "急性损伤不等同于常规拉伸场景",
+          "text": "急性拉伤或扭伤后的活动需要结合症状和恢复阶段。不要用强力拉伸去验证是否已经恢复，也不要忽略持续恶化的表现。",
+          "tags": [
+            "急性拉伤",
+            "拉伸疼痛",
+            "伤后恢复"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nhs-sleep",
+      "title": "日常睡眠恢复：时长、节律与环境",
+      "publisher": "NHS Every Mind Matters",
+      "url": "https://www.nhs.uk/every-mind-matters/mental-health-issues/sleep/",
+      "evidence_type": "机构健康指南",
+      "topics": [
+        "睡眠",
+        "休息"
+      ],
+      "verification_scope": "已核对原始网页正文或官方 PDF 的相关段落",
+      "checked_at": "2026-10-17",
+      "limitations": "通用健康资料，并非攀岩专项试验；有伤病或术后限制时先咨询专业人员。",
+      "entries": [
+        {
+          "key": "duration",
+          "title": "多数健康成年人通常需要七至九小时睡眠",
+          "text": "NHS 提供的成人参考通常为每晚七至九小时，但个体需要不同。应同时观察白天精神和睡眠质量，而不是只追逐一个时长数字。",
+          "tags": [
+            "睡眠时长",
+            "七至九小时",
+            "睡眠恢复",
+            "睡眠"
+          ]
+        },
+        {
+          "key": "routine",
+          "title": "固定作息和安静环境帮助建立睡眠习惯",
+          "text": "尽量保持稳定作息，营造安静、舒适的睡眠环境，并注意临睡前咖啡因和屏幕使用对入睡的影响。",
+          "tags": [
+            "睡眠习惯",
+            "咖啡因",
+            "固定作息"
+          ]
+        },
+        {
+          "key": "help",
+          "title": "睡眠持续影响日常生活时寻求帮助",
+          "text": "酒精带来的困意不代表整夜睡眠质量改善。睡眠问题持续并影响白天生活时，应咨询专业人员。",
+          "tags": [
+            "酒精睡眠",
+            "失眠",
+            "白天疲劳"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mayo-stretch",
+      "title": "拉伸基本原则：先热身、不弹震、不追求疼痛",
+      "publisher": "Mayo Clinic",
+      "url": "https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/stretching/art-20047931",
+      "evidence_type": "机构健康指南",
+      "topics": [
+        "拉伸原则",
+        "热身",
+        "疼痛"
+      ],
+      "verification_scope": "已核对原始网页正文或官方 PDF 的相关段落",
+      "checked_at": "2026-10-17",
+      "limitations": "通用健康资料，并非攀岩专项试验；有伤病或术后限制时先咨询专业人员。",
+      "entries": [
+        {
+          "key": "warm",
+          "title": "静态拉伸不能代替热身",
+          "text": "Mayo 建议先以轻松走动等低强度活动让身体暖起来，再做拉伸。专项动态热身可从较轻的相似动作逐步增加强度。",
+          "tags": [
+            "静态拉伸",
+            "拉伸前热身",
+            "动态热身"
+          ]
+        },
+        {
+          "key": "gentle",
+          "title": "拉伸应平稳呼吸、避免弹震和疼痛",
+          "text": "平稳进入拉伸位置、自然呼吸，避免来回弹震。可有牵拉感，但不以疼痛为目标；疼痛说明需要减小幅度或停止。",
+          "tags": [
+            "弹震拉伸",
+            "拉伸呼吸",
+            "拉伸强度"
+          ]
+        },
+        {
+          "key": "limits",
+          "title": "拉伸不能保证预防过度使用损伤",
+          "text": "规律拉伸可以用于活动范围训练，但不能保证不受伤。已有拉伤或慢性问题时，某些拉伸可能不合适，需要个体化建议。",
+          "tags": [
+            "过度使用损伤",
+            "拉伸预防",
+            "慢性疼痛"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hss-overtraining",
+      "title": "训练与恢复失衡：疲劳记录和负荷调整",
+      "publisher": "Hospital for Special Surgery",
+      "url": "https://www.hss.edu/health-library/move-better/overtraining",
+      "evidence_type": "机构健康指南",
+      "topics": [
+        "负荷管理",
+        "疲劳"
+      ],
+      "verification_scope": "已核对原始网页正文或官方 PDF 的相关段落",
+      "checked_at": "2026-10-17",
+      "limitations": "通用健康资料，并非攀岩专项试验；有伤病或术后限制时先咨询专业人员。",
+      "entries": [
+        {
+          "key": "signs",
+          "title": "持续疲劳与表现下降需要检查恢复安排",
+          "text": "高训练负荷叠加不足的恢复，可能伴随持续疲劳、表现下降或睡眠情绪改变。单次状态不好不足以诊断过度训练。",
+          "tags": [
+            "持续疲劳",
+            "表现下降",
+            "过度训练"
+          ]
+        },
+        {
+          "key": "log",
+          "title": "训练日志也应记录睡眠与压力",
+          "text": "HSS 建议关注训练、休息、营养及生活压力。记录这些因素可以帮助发现负荷与恢复的失衡，而不只记录攀爬难度。",
+          "tags": [
+            "训练日志",
+            "生活压力",
+            "恢复记录"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cochrane-soreness",
+      "title": "拉伸能否减少运动后酸痛：Cochrane 综述",
+      "publisher": "Cochrane",
+      "url": "https://www.cochrane.org/evidence/CD004577_stretching-prevent-or-reduce-muscle-soreness-after-exercise",
+      "evidence_type": "系统综述",
+      "topics": [
+        "酸痛",
+        "拉伸证据"
+      ],
+      "verification_scope": "已核对 Cochrane 公开综述摘要；未获取付费全文",
+      "checked_at": "2026-10-17",
+      "limitations": "研究人群、运动和方案存在差异，不能直接推断所有攀岩者或特定伤病的效果。",
+      "entries": [
+        {
+          "key": "effect",
+          "title": "拉伸并没有显示有临床意义的酸痛减少",
+          "text": "Cochrane 综述发现，在运动前、后或两者都进行拉伸，对健康成人运动后肌肉酸痛的减少没有临床上重要的效果。",
+          "tags": [
+            "拉伸酸痛",
+            "延迟性肌肉酸痛",
+            "DOMS",
+            "攀后酸痛",
+            "酸痛"
+          ]
+        },
+        {
+          "key": "scope",
+          "title": "不能用酸痛结论否定所有活动度训练",
+          "text": "该综述主要回答运动后酸痛问题，并不等同于评估所有长期柔韧目标。把拉伸目标区分为活动度和酸痛管理，是阅读证据时的必要边界。",
+          "tags": [
+            "拉伸效果",
+            "活动度目标",
+            "酸痛证据"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "afonso-stretch",
+      "title": "运动后拉伸与恢复：2021 年系统综述",
+      "publisher": "Afonso 等 / Frontiers in Physiology",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34025459/",
+      "evidence_type": "系统综述",
+      "topics": [
+        "酸痛",
+        "力量恢复"
+      ],
+      "verification_scope": "已核对 PubMed 研究摘要；未逐项重审纳入试验",
+      "checked_at": "2026-10-17",
+      "limitations": "研究人群、运动和方案存在差异，不能直接推断所有攀岩者或特定伤病的效果。",
+      "entries": [
+        {
+          "key": "strength",
+          "title": "运动后拉伸未显示优于被动休息的恢复优势",
+          "text": "这项综述的合并结果未显示运动后拉伸在力量恢复或之后数日的酸痛上优于被动休息。不能据此承诺攀后拉伸会加速恢复。",
+          "tags": [
+            "运动后拉伸",
+            "力量恢复",
+            "被动休息"
+          ]
+        },
+        {
+          "key": "certainty",
+          "title": "拉伸恢复研究的证据确定性有限",
+          "text": "综述纳入十项试验、共二百二十九名受试者，以年轻男性为主，证据确定性很低。结论不能无限外推到攀岩伤病或所有年龄。",
+          "tags": [
+            "恢复研究",
+            "拉伸证据确定性",
+            "年轻男性"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dupuy-recovery",
+      "title": "恢复手段比较：酸痛、疲劳和指标的区别",
+      "publisher": "Dupuy 等 / Frontiers in Physiology",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29755363/",
+      "evidence_type": "系统综述",
+      "topics": [
+        "按摩",
+        "恢复手段"
+      ],
+      "verification_scope": "已核对 PubMed 摘要；未逐项重审纳入试验",
+      "checked_at": "2026-10-17",
+      "limitations": "研究人群、运动和方案存在差异，不能直接推断所有攀岩者或特定伤病的效果。",
+      "entries": [
+        {
+          "key": "massage",
+          "title": "按摩可能缓解酸痛和主观疲劳",
+          "text": "该综述比较多种运动后恢复方法，按摩对酸痛及主观疲劳的改善较突出。但这些结果不是攀岩肌腱或手指损伤的治疗证明。",
+          "tags": [
+            "按摩恢复",
+            "主观疲劳",
+            "运动后按摩"
+          ]
+        },
+        {
+          "key": "outcomes",
+          "title": "感觉舒服不等于已经适合高强度训练",
+          "text": "这项综述分别考察酸痛、疲劳和生理指标。应用到攀岩时，不能把其中一个指标改善直接当作再次极限训练的许可；这是证据应用的限制。",
+          "tags": [
+            "恢复指标",
+            "酸痛减轻",
+            "训练准备度"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pearcey-rolling",
+      "title": "泡沫轴研究：可能收益与小样本限制",
+      "publisher": "Pearcey 等 / Journal of Athletic Training",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25415413/",
+      "evidence_type": "实验研究",
+      "topics": [
+        "泡沫轴",
+        "酸痛"
+      ],
+      "verification_scope": "已核对 PubMed 研究摘要",
+      "checked_at": "2026-10-17",
+      "limitations": "研究规模和运动情境有限，不能直接外推到攀岩手指、肌腱或滑车损伤。",
+      "entries": [
+        {
+          "key": "benefit",
+          "title": "泡沫轴可能改善部分酸痛和表现指标",
+          "text": "这项实验在深蹲造成肌肉酸痛后使用泡沫轴，观察到部分酸痛和运动表现指标改善。它提供的是特定实验条件下的结果。",
+          "tags": [
+            "泡沫轴",
+            "滚轴恢复",
+            "foam rolling"
+          ]
+        },
+        {
+          "key": "limits",
+          "title": "泡沫轴实验不能证明攀岩手指组织修复",
+          "text": "研究仅有八名活跃男性，主要是下肢实验。不能据此声称滚压能修复攀岩手指、滑车或肌腱，也不意味着越痛越有效。",
+          "tags": [
+            "泡沫轴证据",
+            "肌腱修复",
+            "滑车修复",
+            "泡沫轴"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "roberts-cold",
+      "title": "冷水浸泡：短期恢复与长期适应的权衡",
+      "publisher": "Roberts 等 / Journal of Physiology",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26174323/",
+      "evidence_type": "实验研究",
+      "topics": [
+        "冷水浸泡",
+        "力量适应"
+      ],
+      "verification_scope": "已核对 PubMed 研究摘要",
+      "checked_at": "2026-10-17",
+      "limitations": "研究规模和运动情境有限，不能直接外推到攀岩手指、肌腱或滑车损伤。",
+      "entries": [
+        {
+          "key": "adaptation",
+          "title": "力量训练后反复冷水浸泡可能影响适应",
+          "text": "这项十二周男性力量训练研究中，反复训练后冷水浸泡组的部分肌肉和力量增长小于主动恢复组。恢复手段应结合长期训练目标。",
+          "tags": [
+            "冷水浸泡",
+            "冰浴",
+            "力量适应"
+          ]
+        },
+        {
+          "key": "scope",
+          "title": "冷水实验不能概括所有冷敷情境",
+          "text": "该研究不能直接回答攀岩比赛间恢复、急性伤处置或所有冷敷方案。不要从一个力量训练试验推断所有使用冷水都好或都不好。",
+          "tags": [
+            "冷敷边界",
+            "冷水恢复",
+            "长期适应"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "athlete-sleep",
+      "title": "运动员睡眠：2021 年专家共识",
+      "publisher": "British Journal of Sports Medicine",
+      "url": "https://bjsm.bmj.com/content/55/7/356",
+      "evidence_type": "专家共识",
+      "topics": [
+        "运动员睡眠",
+        "日程安排"
+      ],
+      "verification_scope": "已核对期刊页面的公开共识正文",
+      "checked_at": "2026-10-17",
+      "limitations": "面向运动员的一般共识，具体需要存在个体差异，不是个人诊疗意见。",
+      "entries": [
+        {
+          "key": "individual",
+          "title": "运动员的睡眠需要存在个体差异",
+          "text": "睡眠共识强调个体化，单一时长不能满足所有运动员。判断睡眠需求需要结合训练、生活安排和个人感受。",
+          "tags": [
+            "运动员睡眠",
+            "个体睡眠",
+            "恢复需求"
+          ]
+        },
+        {
+          "key": "schedule",
+          "title": "过早或过晚训练可能挤占睡眠",
+          "text": "训练时间安排会影响睡眠机会。过早训练或晚间训练需要留意睡眠被压缩的问题，安排恢复时也应考虑日程。",
+          "tags": [
+            "晚间训练",
+            "清晨训练",
+            "睡眠机会"
+          ]
+        },
+        {
+          "key": "monitor",
+          "title": "睡眠记录不能替代睡眠问题诊断",
+          "text": "睡眠监测可用于了解模式，但持续或较严重的睡眠问题需要专业评估；可穿戴数据本身不能完成诊断。",
+          "tags": [
+            "睡眠监测",
+            "可穿戴睡眠",
+            "睡眠评估"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "asc-recovery",
+      "title": "运动恢复框架：休息、饮食、心理与训练周期",
+      "publisher": "Australian Sports Commission",
+      "url": "https://www.ausport.gov.au/clearinghouse/evidence/sports-performance-recovery",
+      "evidence_type": "机构健康指南",
+      "topics": [
+        "恢复基础",
+        "心理恢复"
+      ],
+      "verification_scope": "已核对原始网页正文或官方 PDF 的相关段落",
+      "checked_at": "2026-10-17",
+      "limitations": "通用健康资料，并非攀岩专项试验；有伤病或术后限制时先咨询专业人员。",
+      "entries": [
+        {
+          "key": "basics",
+          "title": "恢复基础包括睡眠、补给和训练安排",
+          "text": "ASC 的恢复框架同时考虑睡眠休息、营养补水及训练周期。不能仅靠某一种拉伸或器材替代这些基础。",
+          "tags": [
+            "恢复基础",
+            "攀岩恢复",
+            "休息恢复"
+          ]
+        },
+        {
+          "key": "mental",
+          "title": "心理放松也是恢复的一部分",
+          "text": "ASC 将心理恢复纳入整体框架。训练之外的压力和放松安排值得关注，恢复不仅是肌肉的局部处理。",
+          "tags": [
+            "心理恢复",
+            "放松安排",
+            "训练压力"
+          ]
+        },
+        {
+          "key": "choice",
+          "title": "恢复方法要匹配情境与目标",
+          "text": "按摩、浸泡等方法的作用取决于具体方案、目标和个人反应。根据比赛间隔或长期训练目标选择，而不是堆叠所有方法。",
+          "tags": [
+            "恢复方法",
+            "恢复选择",
+            "比赛间隔"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sda-nutrition",
+      "title": "运动后营养：补能、修复、补水与用餐时机",
+      "publisher": "Sports Dietitians Australia",
+      "url": "https://www.sportsdietitians.com.au/wp-content/uploads/2020/07/Recovery-Nutrition.pdf",
+      "evidence_type": "机构健康指南",
+      "topics": [
+        "营养",
+        "补水",
+        "蛋白质"
+      ],
+      "verification_scope": "已核对官方 PDF 的公开提取文本",
+      "checked_at": "2026-10-17",
+      "limitations": "一般运动营养资料；攀后用餐是场景应用，非个人营养处方。特殊疾病、饮食限制或高负荷训练应个体化。",
+      "entries": [
+        {
+          "key": "meal",
+          "title": "攀后恢复餐可考虑碳水、蛋白质与水分",
+          "text": "SDA 恢复营养资料强调补充能量、组织修复和补水。应用到攀后用餐，可把碳水食物、蛋白质食物和液体一起考虑，而非只补一种。",
+          "tags": [
+            "攀后营养",
+            "恢复餐",
+            "碳水",
+            "蛋白质"
+          ]
+        },
+        {
+          "key": "timing",
+          "title": "两次训练间隔影响补给的紧迫性",
+          "text": "SDA 区分短时间内再次训练与较长恢复间隔。若第二次训练很近，及时补给更重要；间隔较长时，正常正餐也可以纳入恢复计划。",
+          "tags": [
+            "补给时机",
+            "训练间隔",
+            "攀后吃什么"
+          ]
+        },
+        {
+          "key": "distribution",
+          "title": "蛋白质补给应关注全天安排",
+          "text": "SDA 提醒蛋白质应分布在全天饮食中。恢复不只取决于结束训练后某一次补充，也不要求所有人购买补剂。",
+          "tags": [
+            "全天蛋白质",
+            "恢复补给",
+            "运动补剂"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sda-hydration",
+      "title": "攀爬期间饮水与补能：环境和时长的影响",
+      "publisher": "Sports Dietitians Australia",
+      "url": "https://www.sportsdietitians.com.au/wp-content/uploads/2020/07/Eating-Drinking-During-Exercise.pdf",
+      "evidence_type": "机构健康指南",
+      "topics": [
+        "补水",
+        "运动中补能"
+      ],
+      "verification_scope": "已核对官方 PDF 的公开提取文本",
+      "checked_at": "2026-10-17",
+      "limitations": "一般运动营养资料，攀岩情境为应用推论；不包含个体汗率测定或疾病相关的饮水处方。",
+      "entries": [
+        {
+          "key": "fluid",
+          "title": "补水量应结合汗量、运动时长和环境",
+          "text": "SDA 指出饮水需要受强度、时长、出汗与环境影响。攀岩应用上，不应给所有人套用相同每小时饮水量，也不应强迫过量饮水。",
+          "tags": [
+            "攀后补水",
+            "攀岩补水",
+            "汗量",
+            "过量饮水"
+          ]
+        },
+        {
+          "key": "water",
+          "title": "较短低强度活动通常可用水补充液体",
+          "text": "SDA 资料指出，较短低强度运动一般可以选择水；更长、更热或负荷较大的情境，需要额外考虑碳水和电解质。",
+          "tags": [
+            "饮水选择",
+            "电解质",
+            "运动饮料"
+          ]
+        },
+        {
+          "key": "food",
+          "title": "长时间活动补给应选择熟悉且能耐受的食物",
+          "text": "运动中吃喝应考虑胃肠耐受和个人经验。把这一原则用于长时间攀爬时，应提前尝试补给方式，避免只在重要活动当天首次尝试。",
+          "tags": [
+            "长时间攀爬",
+            "运动中补能",
+            "胃肠耐受"
+          ]
+        }
+      ]
+    }
+  ]
+}

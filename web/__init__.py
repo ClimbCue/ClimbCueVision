@@ -1,0 +1,1 @@
+"""ClimbCue local testing application."""

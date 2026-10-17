@@ -1,0 +1,22 @@
+[project]
+name = "climbcue-vision-lab"
+version = "0.1.0"
+description = "Local pose tracking and climbing knowledge test workbench"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "climbcue-rag",
+  "fastapi>=0.115,<1",
+  "uvicorn>=0.34,<1",
+  "httpx>=0.28,<1",
+  "pillow>=10,<13",
+]
+
+[dependency-groups]
+dev = ["pytest>=8,<10"]
+
+[tool.uv.sources]
+climbcue-rag = { path = "knowledge-rag", editable = true }
+
+[tool.pytest.ini_options]
+testpaths = ["knowledge-rag/tests", "web/tests"]
+pythonpath = [".", "knowledge-rag/src"]

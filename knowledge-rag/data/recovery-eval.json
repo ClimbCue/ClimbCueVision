@@ -1,0 +1,106 @@
+[
+  {
+    "query": "手腕拉伸有什么要注意的",
+    "expected_id": "recovery-aaos-elbow-extension"
+  },
+  {
+    "query": "前臂拉伸可以怎么做",
+    "expected_id": "recovery-aaos-elbow-flexion"
+  },
+  {
+    "query": "横抱肩怎么避免压到肘部",
+    "expected_id": "recovery-aaos-shoulder-crossbody"
+  },
+  {
+    "query": "肩袖训练只有拉伸吗",
+    "expected_id": "recovery-aaos-shoulder-scapula"
+  },
+  {
+    "query": "高抬脚需要主动活动度吗",
+    "expected_id": "recovery-lattice-mobility-active"
+  },
+  {
+    "query": "分腿前屈为什么不要弓背",
+    "expected_id": "recovery-lattice-pancake-pelvis"
+  },
+  {
+    "query": "侧劈叉对攀岩有什么帮助",
+    "expected_id": "recovery-lattice-side-split-stance"
+  },
+  {
+    "query": "髋屈肌和前后分腿有什么关系",
+    "expected_id": "recovery-lattice-front-split-positions"
+  },
+  {
+    "query": "仰卧腘绳肌拉伸应该扶哪里",
+    "expected_id": "recovery-aaos-hip-hamstring"
+  },
+  {
+    "query": "屈膝小腿拉伸练到哪里",
+    "expected_id": "recovery-aaos-ankle-bent"
+  },
+  {
+    "query": "踝部训练需要平衡练习吗",
+    "expected_id": "recovery-aaos-ankle-balance"
+  },
+  {
+    "query": "背部伸展有哪些注意点",
+    "expected_id": "recovery-aaos-spine-rockback"
+  },
+  {
+    "query": "大腿前侧如何做侧卧拉伸",
+    "expected_id": "recovery-nhs-cooldown-quad"
+  },
+  {
+    "query": "颈部拉伸可以用手强扳吗",
+    "expected_id": "recovery-nhs-flexibility-neck"
+  },
+  {
+    "query": "攀岩之后第二天酸痛，拉伸有用吗",
+    "expected_id": "recovery-cochrane-soreness-effect"
+  },
+  {
+    "query": "泡沫轴可以修复滑车吗",
+    "expected_id": "recovery-pearcey-rolling-limits"
+  },
+  {
+    "query": "冰浴对力量适应有影响吗",
+    "expected_id": "recovery-roberts-cold-adaptation"
+  },
+  {
+    "query": "减量周是不是完全不动",
+    "expected_id": "recovery-lattice-deload-week"
+  },
+  {
+    "query": "没睡好应该照常练极限吗",
+    "expected_id": "recovery-lattice-poor-sleep-session"
+  },
+  {
+    "query": "睡眠恢复需要多少小时",
+    "expected_id": "recovery-nhs-sleep-duration"
+  },
+  {
+    "query": "攀后吃什么，补给时机怎么安排",
+    "expected_id": "recovery-sda-nutrition-timing"
+  },
+  {
+    "query": "攀岩补水每个人一样吗",
+    "expected_id": "recovery-sda-hydration-fluid"
+  },
+  {
+    "query": "持续疲劳和表现下降怎么办",
+    "expected_id": "recovery-hss-overtraining-signs"
+  },
+  {
+    "query": "受伤后明显肿胀还要继续拉吗",
+    "expected_id": "recovery-nhs-injury-redflags"
+  },
+  {
+    "query": "宇宙飞船发动机设计",
+    "expected_id": null
+  },
+  {
+    "query": "北京周末天气",
+    "expected_id": null
+  }
+]
