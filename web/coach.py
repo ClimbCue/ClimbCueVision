@@ -8,7 +8,7 @@ from pathlib import Path
 import re
 import time
 import uuid
-from typing import Literal
+from typing import Annotated, Literal
 
 import httpx
 from fastapi import HTTPException
@@ -35,6 +35,14 @@ class Hold(Strict):
     y: float=Field(ge=0,le=1)
     source: str=Field(default='manual',max_length=80)
     colors: list[str]=Field(default_factory=list,max_length=8)
+    polygon: list[tuple[Annotated[float,Field(ge=0,le=1)],Annotated[float,Field(ge=0,le=1)]]]|None=Field(default=None,min_length=3,max_length=256)
+
+    @model_validator(mode='after')
+    def valid_outline(self):
+        if self.polygon:
+            area=abs(sum(a[0]*b[1]-b[0]*a[1] for a,b in zip(self.polygon,self.polygon[1:]+self.polygon[:1])))/2
+            if area<1e-8:raise ValueError('岩点轮廓面积为零')
+        return self
 
 class FrameImages(Strict):
     snapshot_id: str=Field(min_length=1,max_length=120)
@@ -127,7 +135,7 @@ def build_context(body: CoachInput, hits):
             if norm>1e-8:
                 angle=math.degrees(math.acos(max(-1,min(1,(u[0]*v[0]+u[1]*v[1])/norm))))
                 items.append({'id':name,'text':f'{LABELS[name]}末端投影 ({c.x:.3f},{c.y:.3f})；两段投影夹角 {angle:.1f}°，不是三维角度或受力。'})
-    for hold in body.holds:items.append({'id':f'hold.{hold.id}','text':f'用户确认候选岩点 #{hold.id}，图像归一化坐标 ({hold.x:.3f},{hold.y:.3f})。'})
+    for hold in body.holds:items.append({'id':f'hold.{hold.id}','text':f'用户确认候选岩点 #{hold.id}，图像归一化坐标 ({hold.x:.3f},{hold.y:.3f})；来源 {hold.source}；'+(f'包含 {len(hold.polygon)} 点分割轮廓。' if hold.polygon else '仅标记点，没有分割轮廓。')})
     allowed=[]
     by_id={h.id:h for h in body.holds}
     torso=0
@@ -195,7 +203,8 @@ def present(plan,context,mode,model,elapsed_ms):
             'web':{'instruction':cue,'reason':plan.reason,'observations':evidence,'cautions':plan.cautions,
                    'execution_note':'只有现场确认可达且其他支撑稳定时才试探；不稳时停止尝试，优先保持支撑。' if plan.action=='test_move' else '先完成这一条观察或确认，再刷新姿态规划下一步。',
                    'citations':[e for e in context['evidence'] if e['citation_id'] in plan.citations]},
-            'input_summary':{'holds':len(context['holds']),'allowed_moves':len(context['allowed_moves']),'quality':context['input_quality']}}
+            'input_summary':{'holds':len(context['holds']),'segmented_holds':sum(bool(h.get('polygon')) for h in context['holds']),
+                             'allowed_moves':len(context['allowed_moves']),'quality':context['input_quality']}}
 
 def request_headers(key):
     return {'Content-Type':'application/json','Trace-Id':str(uuid.uuid4()),

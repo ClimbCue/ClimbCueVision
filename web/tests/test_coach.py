@@ -225,3 +225,23 @@ def test_joymaas_identity_error_is_explicit_and_sanitized():
     error=upstream_error(caught.value)
     assert error.status_code==502 and '实名认证' in error.detail
     assert 'must-not-echo' not in error.detail
+
+
+def test_segmented_hold_outline_is_preserved_in_context_and_summary():
+    body=sample();outline=[(.2,.4),(.4,.4),(.4,.6),(.2,.6)]
+    body['holds'][0].update(source='mobilesam',polygon=outline)
+    context=build_context(CoachInput(**body),[])
+    assert context['holds'][0]['polygon']==outline
+    assert context['holds'][1]['polygon'] is None
+    assert '4 点分割轮廓' in next(o['text'] for o in context['observation_items'] if o['id']=='hold.1')
+    plan=Plan(action='confirm_support',reason='先核实支撑。',evidence_ids=['supports'])
+    assert present(plan,context,'preview',None,1)['input_summary']['segmented_holds']==1
+
+
+@pytest.mark.parametrize('polygon',[
+    [[.1,.1],[.2,.2]],[[.1,.1],[.2,.2],[.3,.3]],
+    [[.1,.1],[1.1,.2],[.3,.5]],[[.1,.1],[float('nan'),.2],[.3,.5]],
+])
+def test_invalid_segment_outline_rejected(polygon):
+    body=sample();body['holds'][0]['polygon']=polygon
+    with pytest.raises(ValidationError):CoachInput(**body)

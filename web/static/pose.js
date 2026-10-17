@@ -1,7 +1,7 @@
 import { NAMES, EDGES, reliable, metrics, toCSV } from './pose-math.js';
 import {climbingMetrics,MotionTracker,holdProximity,LIMBS} from './climbing-math.js';
 import {contains,polygonInfo} from './segment-math.js';
-import {initCoach} from './coach.js?v=qwen-direct-20261017';
+import {initCoach} from './coach.js?v=hold-visible-20261017';
 const $=(id)=>document.getElementById(id);
 const video=$('video'),canvas=$('canvas'),ctx=canvas.getContext('2d');
 const capture=new OffscreenCanvas(1,1),captureContext=capture.getContext('2d');
@@ -168,6 +168,7 @@ function showClimbing(f){
 function paintFrame(){
  if(!last)return;
  const points=last.landmarks,c=last.climbing;
+ const bounds=canvas.getBoundingClientRect(),displayScale=Math.max(.05,Math.min(bounds.width/canvas.width,bounds.height/canvas.height)),px=n=>n/displayScale;
  ctx.save();if($('mirror').checked){ctx.translate(canvas.width,0);ctx.scale(-1,1);}
  ctx.drawImage(backdrop,0,0);
  function outline(polygon,selected,confirmed=false){ctx.beginPath();polygon.forEach(([x,y],i)=>i?ctx.lineTo(x*canvas.width,y*canvas.height):ctx.moveTo(x*canvas.width,y*canvas.height));ctx.closePath();ctx.fillStyle=confirmed?'rgba(135,235,133,.22)':selected?'rgba(80,190,255,.35)':'rgba(180,190,190,.06)';ctx.fill();ctx.strokeStyle=confirmed?'#adfa88':selected?'#56c5ff':'#829194';ctx.lineWidth=selected||confirmed?2:1;ctx.stroke();}
@@ -179,7 +180,7 @@ function paintFrame(){
  if(video.paused||$('fixed-camera').checked){
   ctx.strokeStyle='#ffbd7b';ctx.beginPath();for(const [i,p] of (last.motion.trail||[]).entries()){if(i)ctx.lineTo(p.x*canvas.width,p.y*canvas.height);else ctx.moveTo(p.x*canvas.width,p.y*canvas.height);}ctx.stroke();
   for(const [key,index] of LIMBS){const near=last.proximity?.[key],hold=holds.find(h=>h.id===near?.id),point=points[index];if(!hold||!reliable(point))continue;ctx.save();ctx.setLineDash([5,5]);ctx.strokeStyle='#7cddff';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(point.x*canvas.width,point.y*canvas.height);ctx.lineTo(hold.x*canvas.width,hold.y*canvas.height);ctx.stroke();ctx.restore();}
-  for(const hold of holds){const x=hold.x*canvas.width,y=hold.y*canvas.height;ctx.strokeStyle='#7cddff';ctx.beginPath();ctx.arc(x,y,8,0,2*Math.PI);ctx.stroke();ctx.save();ctx.translate(x+10,y-8);if($('mirror').checked)ctx.scale(-1,1);ctx.fillStyle='#b6ecff';ctx.font='16px sans-serif';ctx.fillText(String(hold.id),0,0);ctx.restore();}
+  for(const hold of holds){const x=hold.x*canvas.width,y=hold.y*canvas.height;ctx.strokeStyle='#27dcff';ctx.lineWidth=px(2.5);ctx.beginPath();ctx.arc(x,y,px(6),0,2*Math.PI);ctx.stroke();ctx.save();ctx.translate(x+px(10),Math.max(px(20),y-px(8)));if($('mirror').checked)ctx.scale(-1,1);ctx.font=`bold ${px(14)}px sans-serif`;const label='#'+hold.id;ctx.fillStyle='#092d36';ctx.fillRect(-px(3),-px(15),ctx.measureText(label).width+px(6),px(20));ctx.fillStyle='#7cecff';ctx.fillText(label,0,0);ctx.restore();}
  }
  for(const [p,color] of [[c.center,'#ffbd7b'],[last.metrics.hip,'#96f3c8']]){if(!p)continue;ctx.strokeStyle=color;ctx.lineWidth=3;ctx.beginPath();ctx.arc(p.x*canvas.width,p.y*canvas.height,9,0,2*Math.PI);ctx.stroke();}
  ctx.restore();
@@ -426,6 +427,10 @@ function captureCoachImages(){
  c.lineWidth=2;c.font='bold 16px sans-serif';
  for(const h of holds){
   const x=h.x*image.width,y=h.y*image.height;
+  if(h.polygon?.length>=3){
+   c.beginPath();h.polygon.forEach(([px,py],i)=>{i?c.lineTo(px*image.width,py*image.height):c.moveTo(px*image.width,py*image.height);});c.closePath();
+   c.strokeStyle='#00ffff';c.fillStyle='rgba(0,255,255,.12)';c.fill();c.stroke();
+  }
   c.strokeStyle='#00ffff';c.beginPath();c.arc(x,y,7,0,Math.PI*2);c.stroke();
   const label='#'+h.id,tx=Math.min(image.width-c.measureText(label).width-4,x+9),ty=Math.max(18,y-9);
   c.strokeStyle='#000';c.lineWidth=4;c.strokeText(label,tx,ty);c.fillStyle='#fff';c.fillText(label,tx,ty);c.lineWidth=2;
@@ -433,4 +438,6 @@ function captureCoachImages(){
  return {snapshot_id:`${session}:${last.model}:${last.frame}`,width:image.width,height:image.height,raw,annotated:image.toDataURL('image/jpeg',.85)};
 }
 initCoach(()=>({snapshot:last,source,session,active,paused:video.paused,videoTime:video.currentTime,historyFrames:frame,fixedCamera:$('fixed-camera').checked,
- holds:holds.map(h=>({id:h.id,x:h.x,y:h.y,source:h.source||'manual',colors:h.colors||[]})),captureImages:captureCoachImages}));
+ holds:holds.map(h=>({id:h.id,x:h.x,y:h.y,source:h.source||'manual',colors:h.colors||[],polygon:h.polygon||null})),captureImages:captureCoachImages,
+ selectedCandidates:segmentSelected.size,holdProcessing:segmentBusy||batchRunning,
+ freezeForCoach:()=>{pauseForMarking();if(segmentSelected.size)acceptSelected();$('play').textContent='播放';}}));

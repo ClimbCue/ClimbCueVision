@@ -7,7 +7,7 @@ const page=await browser.newPage({viewport:{width:1440,height:1100},acceptDownlo
 const errors=[];page.on('pageerror',e=>errors.push(e.message));
 try{
  await page.goto(base+'/pose');await page.waitForFunction(()=>document.querySelector('#sample').options.length===3);
- await page.check('#fixed-camera');await page.selectOption('#sample',{index:1});
+ await page.selectOption('#coach-mode','preview');await page.check('#fixed-camera');await page.selectOption('#sample',{index:1});
  await page.waitForFunction(()=>!document.querySelector('#coach-run').disabled&&document.querySelector('#hip').textContent!=='—');
  await page.click('#mark-holds');await page.locator('#canvas').scrollIntoViewIfNeeded();
  const rect=await page.locator('#canvas').boundingBox();await page.mouse.click(rect.x+rect.width*.3,rect.y+rect.height*.4);
@@ -23,8 +23,8 @@ try{
  await page.click('#play');await page.waitForFunction(()=>document.querySelector('#coach-export').disabled);assert.match(await page.locator('#coach-state').textContent(),/失效|更新/);
  // Delayed response must not revive a discarded live command.
  await page.route('**/api/coach/next',async route=>{const response=await route.fetch();const body=await response.text();await new Promise(r=>setTimeout(r,5500));await route.fulfill({status:response.status(),contentType:'application/json',body});});
- await page.click('#coach-run');await page.waitForFunction(()=>document.querySelector('#coach-state').textContent.includes('过期'),null,{timeout:20000});
- assert.ok(await page.locator('#coach-export').isDisabled());await page.unroute('**/api/coach/next');
+ await page.check('#coach-auto');await page.waitForFunction(()=>document.querySelector('#coach-state').textContent.includes('过期'),null,{timeout:20000});
+ assert.ok(await page.locator('#coach-export').isDisabled());await page.uncheck('#coach-auto');await page.unroute('**/api/coach/next');
  await page.click('#play');await page.click('#coach-run');await page.waitForFunction(()=>!document.querySelector('#coach-export').disabled);
  await page.setViewportSize({width:390,height:844});await page.locator('.coach-card').scrollIntoViewIfNeeded();
  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await page.screenshot({path:'artifacts/coach-mobile.png'});

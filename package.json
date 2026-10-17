@@ -16,7 +16,9 @@
     "test:multi-holds": "node scripts/browser-multi-holds-test.mjs",
     "test:color-holds": "node scripts/browser-color-holds-test.mjs",
     "test:hold-selection": "node scripts/browser-hold-selection-test.mjs",
-    "test:coach-vision": "node scripts/browser-coach-vision-test.mjs"
+    "test:coach-vision": "node scripts/browser-coach-vision-test.mjs",
+    "test:coach-snapshot": "node scripts/browser-coach-snapshot-test.mjs",
+    "test:hold-visibility": "node scripts/browser-hold-visibility-test.mjs"
   },
   "dependencies": {
     "@mediapipe/tasks-vision": "1.1.1"
